@@ -1,45 +1,40 @@
-package com.ecommerce.userservice.controller;
+package com.ecommerce.user_service.controller;
 
-import com.ecommerce.userservice.model.User;
-import com.ecommerce.userservice.service.UserService;
-import com.ecommerce.userservice.util.JwtUtil;
+import com.ecommerce.user_service.entity.User;
+import com.ecommerce.user_service.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * ClassName: UserController
+ * Package: com.ecommerce.userservice.controller
+ * Description: 用户控制器，负责用户资源相关操作。
+ *
+ * @Author Shane Liu
+ * @Create 2024/12/02 14:40
+ * @Version 1.0
+ */
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
-    private final UserService userService;
-    private final AuthenticationManager authenticationManager;
 
-    public UserController(UserService userService, AuthenticationManager authenticationManager) {
-        this.userService = userService;
-        this.authenticationManager = authenticationManager;
+    @Autowired
+    private UserService userService;
+
+    @GetMapping("/{id}")
+    public ResponseEntity<User> getUserDetails(@PathVariable Long id) {
+        return ResponseEntity.ok(userService.getUserById(id));
     }
 
-    @PostMapping("/register")
-    public ResponseEntity<User> registerUser(@RequestBody User user) {
-        User newUser = userService.registerUser(user);
-        return ResponseEntity.ok(newUser);
+    @PutMapping("/{id}")
+    public ResponseEntity<User> updateProfile(@PathVariable Long id, @RequestBody User updatedUser) {
+        return ResponseEntity.ok(userService.updateUser(id, updatedUser));
     }
 
-    @PostMapping("/login")
-    public ResponseEntity<String> loginUser(@RequestBody User user) {
-        try {
-            // 认证用户
-            Authentication authentication = authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword())
-            );
-
-            // 登录成功后，生成 JWT
-            String jwt = JwtUtil.generateToken(user.getUsername());
-
-            return ResponseEntity.ok(jwt);
-        } catch (Exception e) {
-            return ResponseEntity.status(401).body("Invalid credentials");
-        }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteUser(@PathVariable Long id) {
+        userService.deleteUser(id);
+        return ResponseEntity.ok("User deleted successfully");
     }
 }

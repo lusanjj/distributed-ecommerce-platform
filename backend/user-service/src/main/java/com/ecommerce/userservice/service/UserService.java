@@ -1,22 +1,36 @@
-package com.ecommerce.userservice.service;
+package com.ecommerce.user_service.service;
 
-import com.ecommerce.userservice.model.User;
-import com.ecommerce.userservice.repository.UserRepository;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import com.ecommerce.user_service.entity.User;
+import com.ecommerce.user_service.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * UserService: 用户资源业务逻辑。
+ *
+ * @Author Shane Liu
+ * @Create 2024/12/02 16:10
+ * @Version 1.0
+ */
 @Service
 public class UserService {
-    private final UserRepository userRepository;
-    private final BCryptPasswordEncoder passwordEncoder;
 
-    public UserService(UserRepository userRepository) {
-        this.userRepository = userRepository;
-        this.passwordEncoder = new BCryptPasswordEncoder();
+    @Autowired
+    private UserRepository userRepository;
+
+    public User getUserById(Long id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User not found!"));
     }
 
-    public User registerUser(User user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
+    public User updateUser(Long id, User updatedUser) {
+        User user = getUserById(id);
+        user.setUsername(updatedUser.getUsername());
+        user.setEmail(updatedUser.getEmail());
         return userRepository.save(user);
+    }
+
+    public void deleteUser(Long id) {
+        userRepository.deleteById(id);
     }
 }
