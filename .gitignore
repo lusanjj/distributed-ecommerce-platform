@@ -1,3 +1,5 @@
 # 忽略敏感信息配置文件
 application.properties
 application.yml
+#log
+user-service.log

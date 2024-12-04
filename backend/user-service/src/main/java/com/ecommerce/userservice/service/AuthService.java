@@ -1,8 +1,8 @@
-package com.ecommerce.user_service.service;
+package com.ecommerce.userservice.service;
 
-import com.ecommerce.user_service.entity.User;
-import com.ecommerce.user_service.repository.UserRepository;
-import com.ecommerce.user_service.security.JwtUtil;
+import com.ecommerce.userservice.entity.User;
+import com.ecommerce.userservice.repository.UserRepository;
+import com.ecommerce.userservice.security.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
  * AuthService: 用户认证业务逻辑。
  *
  * @Author Shane Liu
- * @Create 2024/12/02 16:00
+ * @Create 2024/12/04 16:20
  * @Version 1.0
  */
 @Service
@@ -26,21 +26,23 @@ public class AuthService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    public String registerUser(User user) {
+    public void registerUser(User user) {
         if (userRepository.findByUsername(user.getUsername()).isPresent()) {
-            throw new RuntimeException("Username already exists!");
+            throw new IllegalArgumentException("Username already exists!");
+        }
+        if (userRepository.findByEmail(user.getEmail()).isPresent()) {
+            throw new IllegalArgumentException("Email already exists!");
         }
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setRole("USER");
         userRepository.save(user);
-        return "User registered successfully!";
     }
 
     public String loginUser(String username, String password) {
         User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new RuntimeException("User not found!"));
+                .orElseThrow(() -> new IllegalArgumentException("Invalid username or password!"));
         if (!passwordEncoder.matches(password, user.getPassword())) {
-            throw new RuntimeException("Invalid credentials!");
+            throw new IllegalArgumentException("Invalid username or password!");
         }
         return jwtUtil.generateToken(username, user.getRole());
     }

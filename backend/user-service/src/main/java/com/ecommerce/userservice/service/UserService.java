@@ -1,7 +1,7 @@
-package com.ecommerce.user_service.service;
+package com.ecommerce.userservice.service;
 
-import com.ecommerce.user_service.entity.User;
-import com.ecommerce.user_service.repository.UserRepository;
+import com.ecommerce.userservice.entity.User;
+import com.ecommerce.userservice.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,7 @@
-package com.ecommerce.user_service.controller;
+package com.ecommerce.userservice.controller;
 
-import com.ecommerce.user_service.entity.User;
-import com.ecommerce.user_service.service.UserService;
+import com.ecommerce.userservice.entity.User;
+import com.ecommerce.userservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

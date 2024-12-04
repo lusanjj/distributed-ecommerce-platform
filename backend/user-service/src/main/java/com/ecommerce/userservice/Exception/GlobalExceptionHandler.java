@@ -1,26 +1,31 @@
-package com.ecommerce.userservice.util;
+package com.ecommerce.userservice.exception;
 
 import com.ecommerce.userservice.response.ResponseWrapper;
+import com.ecommerce.userservice.util.ResponseUtil;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**
- * ExceptionHandler: 全局异常处理类。
+ * GlobalExceptionHandler: 统一异常处理类。
  *
  * @Author Shane Liu
- * @Create 2024/12/04 15:15
+ * @Create 2024/12/04 15:20
  * @Version 1.0
  */
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(RuntimeException.class)
-    public ResponseEntity<ResponseWrapper<Void>> handleRuntimeException(RuntimeException ex) {
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<ResponseWrapper<Void>> handleIllegalArgumentException(IllegalArgumentException ex) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                .body(new ResponseWrapper<>("fail", ex.getMessage(), null));
+                .body(ResponseUtil.fail(ex.getMessage(), null));
     }
 
-    // 其他异常处理器可以在此添加
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<ResponseWrapper<Void>> handleRuntimeException(RuntimeException ex) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(ResponseUtil.fail("Internal Server Error: " + ex.getMessage(), null));
+    }
 }

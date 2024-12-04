@@ -1,4 +1,4 @@
-package com.ecommerce.user_service.util;
+package com.ecommerce.userservice.util;
 
 import lombok.Data;
 
