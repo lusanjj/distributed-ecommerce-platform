@@ -5,21 +5,23 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * PasswordResetRequest: 重置密码请求数据结构
+ * ChangePasswordRequest: 修改密码请求的 DTO
  *
  * @Author Shane Liu
- * @Create 2024/12/05
- * @Version 1.0
+ * @Create 2024/12/06
  */
 @Setter
 @Getter
-public class PasswordResetRequest {
+public class ChangePasswordRequest {
 
     // Getters and Setters
-    @NotBlank(message = "Reset token must not be blank")
-    private String token;
+    @NotBlank(message = "Old password must not be blank")
+    private String oldPassword;
 
     @NotBlank(message = "New password must not be blank")
     private String newPassword;
+
+    @NotBlank(message = "Confirm password must not be blank")
+    private String confirmPassword;
 
 }

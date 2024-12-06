@@ -4,9 +4,10 @@ import com.ecommerce.userservice.entity.User;
 import com.ecommerce.userservice.repository.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.time.LocalDateTime;
 
 /**
  * ClassName: UserService
@@ -22,6 +23,40 @@ public class UserService {
 
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    /**
+     * 修改用户密码（需要验证旧密码）
+     * 此api endpoint 可以修改admin 和 user的密碼
+     *
+     * @param userId 用户 ID
+     * @param oldPassword 旧密码
+     * @param newPassword 新密码
+     */
+    public void changePassword(Long userId, String oldPassword, String newPassword) {
+        // 从数据库查找用户
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new EntityNotFoundException("User not found"));
+
+        // 验证旧密码是否正确
+        if (!passwordEncoder.matches(oldPassword, user.getPassword())) {
+            throw new IllegalArgumentException("Incorrect old password");
+        }
+
+        // 验证新密码是否不同于旧密码
+        if (passwordEncoder.matches(newPassword, user.getPassword())) {
+            throw new IllegalArgumentException("New password must be different from old password");
+        }
+
+        // 更新密码并记录密码更新时间
+        user.setPassword(passwordEncoder.encode(newPassword));
+        user.setPasswordLastUpdated(LocalDateTime.now());
+
+        // 保存用户信息
+        userRepository.save(user);
+    }
+
     /**
      * 获取用户信息，通过 JWT 中的用户 ID
      *
@@ -30,7 +65,7 @@ public class UserService {
      */
     public User getUserById(Long userId) {
         return userRepository.findById(userId)
-                .orElseThrow(() -> new EntityNotFoundException("User not found"));
+                .orElseThrow(() -> new IllegalArgumentException("User not found with ID: " + userId));
     }
 
 

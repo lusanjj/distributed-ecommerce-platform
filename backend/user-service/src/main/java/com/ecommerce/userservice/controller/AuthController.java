@@ -42,7 +42,6 @@ public class AuthController {
         return ResponseEntity.ok(ResponseUtil.success("Password reset email sent", null));
     }
 
-
     /**
      * 重置密码：设置新密码
      *
@@ -56,7 +55,6 @@ public class AuthController {
         return ResponseEntity.ok(ResponseUtil.success("Password reset successfully", null));
     }
 
-
     /**
      * 用户注销
      *
@@ -65,13 +63,23 @@ public class AuthController {
     @PostMapping("/logout")
     public ResponseEntity<ResponseWrapper<Void>> logout() {
         // 从 SecurityContext 获取当前用户 ID
-        Long userId = (Long) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
-        // 调用服务层逻辑清除用户的 Refresh Token
+        // 检查是否是匿名用户
+        if (principal == null || principal.equals("anonymousUser")) {
+            throw new IllegalArgumentException("User is not authenticated");
+        }
+
+        // 转换 principal 为 Long 类型的用户 ID
+        Long userId = Long.valueOf(principal.toString());
+
+        // 调用服务层逻辑清理用户的 Refresh Token
         authService.logout(userId);
 
-        return ResponseEntity.ok(ResponseUtil.success("User logged out successfully", null));
+        // 返回成功响应
+        return ResponseEntity.ok(ResponseUtil.success("Logged out successfully", null));
     }
+
 
     @PostMapping("/refresh-token")
     public ResponseEntity<ResponseWrapper<String>> refresh(@RequestHeader("Authorization") String oldRefreshToken) {

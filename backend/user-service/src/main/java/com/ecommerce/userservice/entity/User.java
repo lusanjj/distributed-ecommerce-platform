@@ -2,6 +2,8 @@ package com.ecommerce.userservice.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -43,6 +45,9 @@ public class User {
     // 新增字段：令牌过期时间
     @Temporal(TemporalType.TIMESTAMP)
     private Date resetTokenExpiry;
+
+    // 存储密码的最后更新时间，用于检查 Token 有效性
+    private LocalDateTime passwordLastUpdated;
 
 
 }

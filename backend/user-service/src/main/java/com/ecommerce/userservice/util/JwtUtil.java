@@ -91,21 +91,6 @@ public class JwtUtil {
     }
 
     /**
-     * 生成 Refresh Token
-     *
-     * @param userId 用户 ID
-     * @return Refresh Token
-     */
-    public String generateRefreshToken(Long userId) {
-        return Jwts.builder()
-                .setSubject(String.valueOf(userId))
-                .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis() + refreshExpiration))
-                .signWith(secretKey, SignatureAlgorithm.HS512)
-                .compact();
-    }
-
-    /**
      * 验证 Access Token 并返回用户 ID
      *
      * @param token Access Token
@@ -122,6 +107,21 @@ public class JwtUtil {
         } catch (JwtException | IllegalArgumentException e) {
             throw new IllegalArgumentException("Invalid Access Token!");
         }
+    }
+
+    /**
+     * 生成 Refresh Token
+     *
+     * @param userId 用户 ID
+     * @return Refresh Token
+     */
+    public String generateRefreshToken(Long userId) {
+        return Jwts.builder()
+                .setSubject(String.valueOf(userId))
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + refreshExpiration))
+                .signWith(secretKey, SignatureAlgorithm.HS512)
+                .compact();
     }
 
     /**
@@ -143,19 +143,6 @@ public class JwtUtil {
         }
     }
 
-//    /**
-//     * 从 Token 中解析 Claims
-//     *
-//     * @param token JWT Token
-//     * @return Claims
-//     */
-//    public Claims parseClaims(String token) {
-//        return Jwts.parserBuilder()
-//                .setSigningKey(secretKey)
-//                .build()
-//                .parseClaimsJws(token)
-//                .getBody();
-//    }
 
     /**
      * 获取 Token 的 Claims

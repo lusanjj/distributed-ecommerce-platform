@@ -61,12 +61,12 @@ public class AdminService {
     /**
      * 根据 ID 获取用户
      *
-     * @param id 用户 ID
+     * @param userId 用户 ID
      * @return 用户信息
      */
-    public User getUserById(Long id) {
-        return userRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("User not found with ID: " + id));
+    public User getUserById(Long userId) {
+        return userRepository.findById(userId)
+                .orElseThrow(() -> new IllegalArgumentException("User not found with ID: " + userId));
     }
 
     /**

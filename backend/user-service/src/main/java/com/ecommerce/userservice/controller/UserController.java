@@ -1,5 +1,6 @@
 package com.ecommerce.userservice.controller;
 
+import com.ecommerce.userservice.dto.ChangePasswordRequest;
 import com.ecommerce.userservice.entity.User;
 import com.ecommerce.userservice.repository.UserRepository;
 import com.ecommerce.userservice.response.ResponseWrapper;
@@ -29,6 +30,27 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    /**
+     * 修改当前用户的密码
+     *
+     * @param changePasswordRequest 包含旧密码和新密码的请求数据
+     * @return 操作结果
+     */
+    @PostMapping("/change-password")
+    public ResponseEntity<ResponseWrapper<Void>> changePassword(
+            @RequestBody @Valid ChangePasswordRequest changePasswordRequest) {
+
+        // 确保新密码和确认密码一致
+        if (!changePasswordRequest.getNewPassword().equals(changePasswordRequest.getConfirmPassword())) {
+            throw new IllegalArgumentException("New password and confirm password do not match");
+        }
+
+        Long userId = (Long) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        userService.changePassword(userId, changePasswordRequest.getOldPassword(), changePasswordRequest.getNewPassword());
+
+        return ResponseEntity.ok(ResponseUtil.success("Password changed successfully", null));
+    }
 
 
     /**
