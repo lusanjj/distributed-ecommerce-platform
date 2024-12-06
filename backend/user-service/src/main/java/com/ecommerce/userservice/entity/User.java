@@ -2,6 +2,7 @@ package com.ecommerce.userservice.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import java.util.Date;
 
 /**
  * ClassName: User
@@ -29,5 +30,19 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
-    private String role; // 用户角色：USER / ADMIN
+    // 用户角色：USER / ADMIN
+    private String role;
+
+    // 用于存储用户的 Refresh Token，长度限制为 512 字符
+    @Column(length = 512)
+    private String refreshToken;
+
+    // 新增字段：重置令牌
+    private String resetToken;
+
+    // 新增字段：令牌过期时间
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date resetTokenExpiry;
+
+
 }

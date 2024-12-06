@@ -1,19 +1,27 @@
 package com.ecommerce.userservice.controller;
 
 import com.ecommerce.userservice.entity.User;
+import com.ecommerce.userservice.repository.UserRepository;
+import com.ecommerce.userservice.response.ResponseWrapper;
 import com.ecommerce.userservice.service.UserService;
+import com.ecommerce.userservice.util.ResponseUtil;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import java.util.List;
+
 /**
- * ClassName: UserController
- * Package: com.ecommerce.userservice.controller
- * Description: 用户控制器，负责用户资源相关操作。
+ * UserController: 用户管理端点
  *
  * @Author Shane Liu
- * @Create 2024/12/02 14:40
- * @Version 1.0
+ * @Create 2024/12/04 17:10
+ * @Update 2024/12/05 01:00
+ * @Version 1.1
  */
 @RestController
 @RequestMapping("/api/users")
@@ -22,19 +30,38 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/{id}")
-    public ResponseEntity<User> getUserDetails(@PathVariable Long id) {
-        return ResponseEntity.ok(userService.getUserById(id));
+
+    /**
+     * 获取当前用户信息
+     *
+     * @return 当前用户信息
+     */
+    @GetMapping("/me")
+    public ResponseEntity<ResponseWrapper<User>> getCurrentUser() {
+        // 从 SecurityContext 获取当前用户的 ID
+        Long userId = (Long) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = userService.getUserById(userId);
+
+        return ResponseEntity.ok(ResponseUtil.success("Current user retrieved successfully", user));
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<User> updateProfile(@PathVariable Long id, @RequestBody User updatedUser) {
-        return ResponseEntity.ok(userService.updateUser(id, updatedUser));
+    /**
+     * 更新用户信息（仅限当前用户）
+     *
+     * @param updatedUser 更新后的用户数据（仅允许修改用户名和邮箱）
+     * @return 更新后的用户信息
+     */
+    @PutMapping("/updateMe")
+    public ResponseEntity<ResponseWrapper<User>> updateCurrentUser(@Valid @RequestBody User updatedUser) {
+        // 从 SecurityContext 获取当前用户的 ID
+        Long userId = (Long) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        // 调用服务层更新当前用户的信息
+        User user = userService.updateCurrentUser(userId, updatedUser);
+
+        // 返回成功响应
+        return ResponseEntity.ok(ResponseUtil.success("User updated successfully", user));
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteUser(@PathVariable Long id) {
-        userService.deleteUser(id);
-        return ResponseEntity.ok("User deleted successfully");
-    }
+
 }
