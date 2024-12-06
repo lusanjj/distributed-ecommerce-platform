@@ -1,189 +1,155 @@
-# Distributed E-Commerce Platform
+### Distributed E-Commerce Platform
 
-This project is a distributed e-commerce platform built with a microservices architecture. 
-It provides features like user management, product browsing, order management, payment processing, and more.
+#### **Project Overview**
 
-## It provides features like user management, product browsing, order management, payment processing, and more.
-- `backend/`: Contains all backend microservices.
-- `frontend/`: React-based frontend application.
-- `docker/`: Docker configuration for containerization.
-- `k8s/`: Kubernetes configuration for deployment and orchestration.
+The Distributed E-Commerce Platform is designed to provide a seamless e-commerce experience with scalability, reliability, and flexibility. It adopts a microservices architecture to handle high traffic and diverse functionalities. The platform's core features include:
 
-Refer to the detailed documentation for more information.
-
-
-
----
-
-## **Distributed E-Commerce Platform Project Documentation** ## **Project Overview
-
-## **Project overview** ### **1.
-### **1. Project Objectives** #### **Distributed E-Commerce Platform Project Documentation
-The distributed e-commerce platform aims to provide a comprehensive e-commerce experience that supports high concurrency, high availability and high scalability. The platform utilizes a microservice architecture and supports the following core functions:
-- **User management**: provides registration, login, authentication and authorization mechanisms.
-- **Commodity Browsing and Search**: supports commodity display, categorized browsing and search function.
-- **Order Management**: supports placing orders, checking order status, and administrator can manage orders.
-- **Payment System**: Support payment process and integrate third-party payment interface (e.g. Alipay, WeChat Pay).
-- **Notification system**: real-time push order status updates and promotional information.
-- **Recommendation system**: provides personalized recommendations based on user behavior.
-- **Backend management system**: merchants and administrators can manage products, orders and users.
+- **User Management:** Registration, login, authentication, and role-based access control.
+- **Product Browsing and Search:** Display, category browsing, and product search.
+- **Order Management:** Placing orders, viewing statuses, and admin order management.
+- **Payment Processing:** Integration with third-party payment services like PayPal or Stripe.
+- **Notification System:** Real-time order status updates and promotional notifications.
+- **Recommendation System:** Personalized recommendations based on user behavior.
+- **Admin Dashboard:** Manage users, orders, and products for merchants and admins.
 
 ---
 
-## **Technology Stack***
-### **1. Front-end**: **React.
-- **React.js**: for building responsive and dynamic pages.
-- **Redux**: state management.
-- **Axios**: handling API requests.
-- **Material-UI**: for designing modern interfaces.
+#### **Technology Stack**
 
-### **2. Back-end**: **Spring Boot**.
-- **Spring Boot**: develop microservices to handle user requests and business logic.
-- **Spring Cloud**: for service discovery, configuration management and load balancing.
-- **JWT**: to realize user authentication and session management.
-- **Kafka**: for asynchronous communication between microservices.
-- **Nginx**: as a reverse proxy and load balancer.
+##### **Frontend**
+- **React.js:** Responsive and dynamic UI development.
+- **Redux:** State management.
+- **Axios:** API integration.
+- **Material-UI:** Modern UI components.
 
-### **3. Databases**: The following are examples of databases.
-- **MySQL**: stores relational data (users, products, orders, etc.).
-- **Redis**: serves as a cache to accelerate frequently queried data.
-- **MongoDB** (optional): store non-relational data (e.g. product reviews).
+##### **Backend**
+- **Spring Boot:** Microservices development and request handling.
+- **Spring Security + JWT:** Authentication and authorization.
+- **Spring Cloud:** Service discovery and load balancing.
+- **Kafka:** Asynchronous inter-service communication.
+- **Nginx:** Reverse proxy and load balancing.
 
-### **4. Containerization and Deployment**
-- **Docker**: Containerize services to ensure environment consistency.
-- **Kubernetes**: manages automated deployment and scaling of containers.
-- **AWS/GCP**: hosting platform to ensure high system availability.
+##### **Databases**
+- **MySQL:** Relational data storage (e.g., users, products, orders).
+- **Redis:** Caching frequent queries for performance.
+- **MongoDB (optional):** Non-relational data (e.g., product reviews).
 
-### **5. CI/CD**.
-- **Jenkins/GitHub Actions**: Enables automated testing, building, and deployment.
-- **Git**: version management.
+##### **Containerization and Deployment**
+- **Docker:** Ensures consistency across environments.
+- **Kubernetes:** Manages containerized services.
+- **AWS/GCP:** Hosting platform for high availability.
+
+##### **CI/CD**
+- **Jenkins/GitHub Actions:** Automated testing, building, and deployment.
+- **Git:** Version control.
 
 ---
 
-## **System Architecture** **Architecture
-### **1. Microservices design**
+#### **System Architecture**
+
+##### **1. Microservices**
 The platform consists of the following microservices:
-- **User Service**: handles user registration, login and role management.
-- **Goods service**: manages goods information and categorization.
-- **Order service**: handles order creation and status update.
-- **Payment Service**: integrates with third-party payment interfaces.
-- **Notification Service**: send order status updates and promotional information.
-- **Recommendation Service**: generate recommendation based on user behavior.
 
-### **2. API Gateway**: Generate recommendations based on user behavior.
-- Use **Nginx** or **Spring Cloud Gateway** to manage the communication between front-end and back-end microservices.
+- **User Service:** User registration, login, and management.
+- **Product Service:** Product information and categories management.
+- **Order Service:** Order creation and status updates.
+- **Payment Service:** Payment integration with third-party APIs.
+- **Notification Service:** Sends updates on order statuses.
+- **Recommendation Service:** Generates recommendations.
 
-### **3. Message queues**
-- Use **Kafka** to handle asynchronous tasks between microservices, such as triggering notifications and inventory updates when orders are completed.
+##### **2. API Gateway**
+- **Nginx** or **Spring Cloud Gateway** for frontend-backend communication.
 
-### **4. Data storage**
-- **MySQL**: store core business data.
-- **Redis**: caches high-frequency accessed data and reduces database load.
+##### **3. Message Queue**
+- **Kafka** for inter-service asynchronous communication (e.g., inventory updates post-order).
+
+##### **4. Data Storage**
+- **MySQL:** Core business data.
+- **Redis:** Caching for performance.
 
 ---
 
-## **Development Process** **Development Process
-### **1. Stage 1: Requirements Analysis** **Requirements Analysis
-- **Functional requirements**:
-    - User management: registration, login, role control.
-    - Product browsing: display, categorization, search.
-    - Order management: order placement, payment, status update.
-    - Notification system: order status update push.
-    - Recommendation system: recommend products based on user behavior.
-- **Non-functional requirements**:
-    - High Performance: Support high concurrency.
-    - High Security: JWT and encrypted communication.
-    - High Availability: Load balancing and containerization.
+#### **Development Process**
 
-### Phase 2: Architecture Design**.
-- Draw **System Architecture Diagram** and **Database Design Diagram**.
-- Determine microservice communication protocols (REST API and Kafka).
+##### **1. Requirements Analysis**
+- Functional:
+  - User management.
+  - Product browsing and order management.
+  - Notifications and recommendations.
+- Non-functional:
+  - High scalability.
+  - Secure communication via JWT.
+  - High availability via load balancing.
 
-### **3. Phase 3: Back-end Development** **3.
-#### **3.1 User Services**
-- **Technology**: Spring Boot + Spring Security + MySQL + JWT.
-- **Functionality**:
-    - User Registration.
-    - User Login (JWT).
-    - Role-Based Authority Control (RBAC).
+##### **2. Architectural Design**
+- Create system architecture and database schema diagrams.
+- Define communication protocols (REST API and Kafka).
 
-#### **3.2 Merchandise Services**.
-- **Technology**: Spring Boot + MySQL.
-- **Functions**:
-    - Commodity display, add, modify, delete.
-    - Product classification.
-    - Search optimization (optional Elasticsearch).
+##### **3. Backend Development**
 
-#### **3.3 Order Service** **Technology**: Spring Boot + MySQL.
-- **Technology**: Spring Boot + Kafka + MySQL.
-- **Functionality**:
-    - Order creation.
-    - Order status update.
+###### **User Service**
+- **Tech Stack:** Spring Boot, MySQL, Spring Security, JWT.
+- **Features:** User registration, login, and role-based access.
 
-#### **3.4 Payment Services** **Technology**: Spring Boot + Kafka + MySQL.
-- **Technology**: Spring Boot + 3rd party payment interface.
-- **Functionality**:
-    - Payment integration (Alipay, WeChat Pay).
-    - Payment status synchronization.
+###### **Product Service**
+- **Tech Stack:** Spring Boot, MySQL.
+- **Features:** Product CRUD, categorization, and search.
 
-#### **3.5 Notification Service** **Technology**: Spring Boot + 3rd party payment interface.
-- **Technology**: Spring Boot + Kafka.
-- **Functionality**:
-    - Push order status update.
-    - Advertisement and promotion information push.
+###### **Order Service**
+- **Tech Stack:** Spring Boot, Kafka, MySQL.
+- **Features:** Order creation and status management.
 
----.
+###### **Payment Service**
+- **Tech Stack:** Spring Boot, third-party API integration.
+- **Features:** Payment initiation and confirmation.
 
-### **4. Stage 4: Front-end development** **Framework**: React.js.
-- **Framework**: React.js.
-- **Functionality**:
-    - Develop user interface: product display, order management.
-    - Configure Redux to manage global state.
-    - Use Axios to communicate with the back-end API.
+###### **Notification Service**
+- **Tech Stack:** Spring Boot, Kafka.
+- **Features:** Order status updates and promotional notifications.
 
-----
+---
 
-### **5. Phase 5: Testing and Optimization** **5.1 Test**
-#### **5.1 Testing**
-- **Tools**:
-    - **Postman**: test the API.
-    - **JUnit**: unit testing.
-    - **Selenium**: front-end automated tests.
-- **Types of tests**:
-    - Unit testing.
-    - Integration testing.
-    - Performance tests.
+##### **4. Frontend Development**
+- **Framework:** React.js.
+- **Features:** UI for product display, user profile, and order management.
+- **Tools:** Axios for API communication, Material-UI for styling.
 
-#### **5.2 Optimization**.
-- Database indexing optimization.
-- Redis caching of high-frequency queries.
-- Nginx and Kubernetes for load balancing.
+##### **5. Testing and Optimization**
+###### **Testing**
+- Tools: **Postman** (API), **JUnit** (Unit Testing), **Selenium** (UI Testing).
+- Types: Unit, integration, and performance tests.
 
---- --- --- --- --- --- --- --- --- --- --- ---
+###### **Optimization**
+- Add database indices.
+- Cache frequent queries using Redis.
+- Use Nginx and Kubernetes for load balancing.
 
-## **Project directory structure
+---
+
+#### **Project Directory**
+
 ```
 distributed-ecommerce-platform/
 │
-├── backend/ # Backend microservices section
-│ ├── user-service/ # user management microservice
-│ ├── product-service/ # Product management microservice
-│ ├── order-service/ # order management microservice
-│ ├── payment-service/ # payment system microservice
-│ └── recommendation-service/ # Recommendation system microservice
-│ └─ recommendation-service/ # recommendation-system microservice
-├── frontend/ # Front-end part (React)
-│ ├── src/ # Front-end part (React)
-│ ├── public/
-│ └── package.json
+├── backend/             # Backend microservices
+│   ├── user-service/    # User Management Service
+│   ├── product-service/ # Product Management Service
+│   ├── order-service/   # Order Management Service
+│   ├── payment-service/ # Payment Processing Service
+│   └── notification-service/ # Notification Service
 │
-├── docker/ # Docker configuration
-│ └── docker-compose.yml
+├── frontend/            # Frontend application (React.js)
+│   ├── src/
+│   ├── public/
+│   └── package.json
 │
-├── k8s/ # Kubernetes Configuration File
-│ └── deployment.yaml
-│ └── README.yml │
-└── README.md # Project description file
+├── docker/              # Docker configurations
+│   └── docker-compose.yml
+│
+├── k8s/                 # Kubernetes deployment configurations
+│   └── deployment.yaml
+│
+└── README.md            # Project Documentation
 ```
-*** Translated with www.DeepL.com/Translator (free version) ***
 
+This documentation ensures clear communication and consistency for development, deployment, and scalability.
