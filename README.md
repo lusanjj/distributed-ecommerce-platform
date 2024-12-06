@@ -3,7 +3,7 @@
 This project is a distributed e-commerce platform built with a microservices architecture. 
 It provides features like user management, product browsing, order management, payment processing, and more.
 
-## Project Structure
+## It provides features like user management, product browsing, order management, payment processing, and more.
 - `backend/`: Contains all backend microservices.
 - `frontend/`: React-based frontend application.
 - `docker/`: Docker configuration for containerization.
@@ -11,177 +11,179 @@ It provides features like user management, product browsing, order management, p
 
 Refer to the detailed documentation for more information.
 
-以下是为你的分布式电商平台项目生成的完整 Markdown 格式文档：
+
 
 ---
 
-# **分布式电商平台项目文档**
+## **Distributed E-Commerce Platform Project Documentation** ## **Project Overview
 
-## **项目概述**
-### **1. 项目目标**
-分布式电商平台旨在提供全面的电商体验，支持高并发、高可用和高扩展性。平台采用微服务架构，支持以下核心功能：
-- **用户管理**：提供注册、登录、认证和授权机制。
-- **商品浏览与搜索**：支持商品展示、分类浏览、搜索功能。
-- **订单管理**：支持下单、查看订单状态，管理员可管理订单。
-- **支付系统**：支持支付流程并集成第三方支付接口（如支付宝、微信支付）。
-- **通知系统**：实时推送订单状态更新和促销信息。
-- **推荐系统**：基于用户行为提供个性化推荐。
-- **后台管理系统**：商家和管理员可管理商品、订单和用户。
-
----
-
-## **技术栈**
-### **1. 前端**
-- **React.js**：用于构建响应式和动态页面。
-- **Redux**：状态管理。
-- **Axios**：处理 API 请求。
-- **Material-UI**：用于设计现代化界面。
-
-### **2. 后端**
-- **Spring Boot**：开发微服务，处理用户请求和业务逻辑。
-- **Spring Cloud**：用于服务发现、配置管理和负载均衡。
-- **JWT**：实现用户身份验证和会话管理。
-- **Kafka**：用于微服务之间的异步通信。
-- **Nginx**：作为反向代理和负载均衡器。
-
-### **3. 数据库**
-- **MySQL**：存储关系数据（用户、商品、订单等）。
-- **Redis**：作为缓存加速频繁查询的数据。
-- **MongoDB**（可选）：存储非关系型数据（如商品评价）。
-
-### **4. 容器化与部署**
-- **Docker**：容器化服务，确保环境一致性。
-- **Kubernetes**：管理容器的自动部署和扩展。
-- **AWS/GCP**：托管平台，保证系统高可用。
-
-### **5. CI/CD**
-- **Jenkins/GitHub Actions**：实现自动化测试、构建和部署。
-- **Git**：版本管理。
+## **Project overview** ### **1.
+### **1. Project Objectives** #### **Distributed E-Commerce Platform Project Documentation
+The distributed e-commerce platform aims to provide a comprehensive e-commerce experience that supports high concurrency, high availability and high scalability. The platform utilizes a microservice architecture and supports the following core functions:
+- **User management**: provides registration, login, authentication and authorization mechanisms.
+- **Commodity Browsing and Search**: supports commodity display, categorized browsing and search function.
+- **Order Management**: supports placing orders, checking order status, and administrator can manage orders.
+- **Payment System**: Support payment process and integrate third-party payment interface (e.g. Alipay, WeChat Pay).
+- **Notification system**: real-time push order status updates and promotional information.
+- **Recommendation system**: provides personalized recommendations based on user behavior.
+- **Backend management system**: merchants and administrators can manage products, orders and users.
 
 ---
 
-## **系统架构**
-### **1. 微服务设计**
-平台由以下微服务组成：
-- **用户服务**：处理用户注册、登录和角色管理。
-- **商品服务**：管理商品信息和分类。
-- **订单服务**：处理订单创建和状态更新。
-- **支付服务**：与第三方支付接口集成。
-- **通知服务**：发送订单状态更新和促销信息。
-- **推荐服务**：基于用户行为生成推荐。
+## **Technology Stack***
+### **1. Front-end**: **React.
+- **React.js**: for building responsive and dynamic pages.
+- **Redux**: state management.
+- **Axios**: handling API requests.
+- **Material-UI**: for designing modern interfaces.
 
-### **2. API 网关**
-- 使用 **Nginx** 或 **Spring Cloud Gateway**，管理前端与后端微服务的通信。
+### **2. Back-end**: **Spring Boot**.
+- **Spring Boot**: develop microservices to handle user requests and business logic.
+- **Spring Cloud**: for service discovery, configuration management and load balancing.
+- **JWT**: to realize user authentication and session management.
+- **Kafka**: for asynchronous communication between microservices.
+- **Nginx**: as a reverse proxy and load balancer.
 
-### **3. 消息队列**
-- 使用 **Kafka** 处理微服务间的异步任务，例如订单完成后触发通知和库存更新。
+### **3. Databases**: The following are examples of databases.
+- **MySQL**: stores relational data (users, products, orders, etc.).
+- **Redis**: serves as a cache to accelerate frequently queried data.
+- **MongoDB** (optional): store non-relational data (e.g. product reviews).
 
-### **4. 数据存储**
-- **MySQL**：存储核心业务数据。
-- **Redis**：缓存高频访问的数据，减轻数据库负载。
+### **4. Containerization and Deployment**
+- **Docker**: Containerize services to ensure environment consistency.
+- **Kubernetes**: manages automated deployment and scaling of containers.
+- **AWS/GCP**: hosting platform to ensure high system availability.
 
----
-
-## **开发流程**
-### **1. 阶段1：需求分析**
-- **功能需求**：
-    - 用户管理：注册、登录、角色控制。
-    - 商品浏览：展示、分类、搜索。
-    - 订单管理：下单、支付、状态更新。
-    - 通知系统：订单状态更新推送。
-    - 推荐系统：基于用户行为推荐商品。
-- **非功能需求**：
-    - 高性能：支持高并发。
-    - 高安全性：采用 JWT 和加密通信。
-    - 高可用性：负载均衡与容器化。
-
-### **2. 阶段2：架构设计**
-- 绘制 **系统架构图** 和 **数据库设计图**。
-- 确定微服务通信协议（REST API 和 Kafka）。
-
-### **3. 阶段3：后端开发**
-#### **3.1 用户服务**
-- **技术**：Spring Boot + Spring Security + MySQL + JWT。
-- **功能**：
-    - 用户注册。
-    - 用户登录（JWT）。
-    - 基于角色的权限控制（RBAC）。
-
-#### **3.2 商品服务**
-- **技术**：Spring Boot + MySQL。
-- **功能**：
-    - 商品展示、添加、修改、删除。
-    - 商品分类。
-    - 搜索优化（可选用 Elasticsearch）。
-
-#### **3.3 订单服务**
-- **技术**：Spring Boot + Kafka + MySQL。
-- **功能**：
-    - 订单创建。
-    - 订单状态更新。
-
-#### **3.4 支付服务**
-- **技术**：Spring Boot + 第三方支付接口。
-- **功能**：
-    - 支付集成（支付宝、微信支付）。
-    - 支付状态同步。
-
-#### **3.5 通知服务**
-- **技术**：Spring Boot + Kafka。
-- **功能**：
-    - 推送订单状态更新。
-    - 广告与促销信息推送。
+### **5. CI/CD**.
+- **Jenkins/GitHub Actions**: Enables automated testing, building, and deployment.
+- **Git**: version management.
 
 ---
 
-### **4. 阶段4：前端开发**
-- **框架**：React.js。
-- **功能**：
-    - 开发用户界面：商品展示、订单管理。
-    - 配置 Redux 管理全局状态。
-    - 使用 Axios 与后端 API 通信。
+## **System Architecture** **Architecture
+### **1. Microservices design**
+The platform consists of the following microservices:
+- **User Service**: handles user registration, login and role management.
+- **Goods service**: manages goods information and categorization.
+- **Order service**: handles order creation and status update.
+- **Payment Service**: integrates with third-party payment interfaces.
+- **Notification Service**: send order status updates and promotional information.
+- **Recommendation Service**: generate recommendation based on user behavior.
+
+### **2. API Gateway**: Generate recommendations based on user behavior.
+- Use **Nginx** or **Spring Cloud Gateway** to manage the communication between front-end and back-end microservices.
+
+### **3. Message queues**
+- Use **Kafka** to handle asynchronous tasks between microservices, such as triggering notifications and inventory updates when orders are completed.
+
+### **4. Data storage**
+- **MySQL**: store core business data.
+- **Redis**: caches high-frequency accessed data and reduces database load.
 
 ---
 
-### **5. 阶段5：测试与优化**
-#### **5.1 测试**
-- **工具**：
-    - **Postman**：测试 API。
-    - **JUnit**：单元测试。
-    - **Selenium**：前端自动化测试。
-- **测试类型**：
-    - 单元测试。
-    - 集成测试。
-    - 性能测试。
+## **Development Process** **Development Process
+### **1. Stage 1: Requirements Analysis** **Requirements Analysis
+- **Functional requirements**:
+    - User management: registration, login, role control.
+    - Product browsing: display, categorization, search.
+    - Order management: order placement, payment, status update.
+    - Notification system: order status update push.
+    - Recommendation system: recommend products based on user behavior.
+- **Non-functional requirements**:
+    - High Performance: Support high concurrency.
+    - High Security: JWT and encrypted communication.
+    - High Availability: Load balancing and containerization.
 
-#### **5.2 优化**
-- 数据库索引优化。
-- Redis 缓存高频查询。
-- Nginx 和 Kubernetes 实现负载均衡。
+### Phase 2: Architecture Design**.
+- Draw **System Architecture Diagram** and **Database Design Diagram**.
+- Determine microservice communication protocols (REST API and Kafka).
 
----
+### **3. Phase 3: Back-end Development** **3.
+#### **3.1 User Services**
+- **Technology**: Spring Boot + Spring Security + MySQL + JWT.
+- **Functionality**:
+    - User Registration.
+    - User Login (JWT).
+    - Role-Based Authority Control (RBAC).
 
-## **项目目录结构**
+#### **3.2 Merchandise Services**.
+- **Technology**: Spring Boot + MySQL.
+- **Functions**:
+    - Commodity display, add, modify, delete.
+    - Product classification.
+    - Search optimization (optional Elasticsearch).
+
+#### **3.3 Order Service** **Technology**: Spring Boot + MySQL.
+- **Technology**: Spring Boot + Kafka + MySQL.
+- **Functionality**:
+    - Order creation.
+    - Order status update.
+
+#### **3.4 Payment Services** **Technology**: Spring Boot + Kafka + MySQL.
+- **Technology**: Spring Boot + 3rd party payment interface.
+- **Functionality**:
+    - Payment integration (Alipay, WeChat Pay).
+    - Payment status synchronization.
+
+#### **3.5 Notification Service** **Technology**: Spring Boot + 3rd party payment interface.
+- **Technology**: Spring Boot + Kafka.
+- **Functionality**:
+    - Push order status update.
+    - Advertisement and promotion information push.
+
+---.
+
+### **4. Stage 4: Front-end development** **Framework**: React.js.
+- **Framework**: React.js.
+- **Functionality**:
+    - Develop user interface: product display, order management.
+    - Configure Redux to manage global state.
+    - Use Axios to communicate with the back-end API.
+
+----
+
+### **5. Phase 5: Testing and Optimization** **5.1 Test**
+#### **5.1 Testing**
+- **Tools**:
+    - **Postman**: test the API.
+    - **JUnit**: unit testing.
+    - **Selenium**: front-end automated tests.
+- **Types of tests**:
+    - Unit testing.
+    - Integration testing.
+    - Performance tests.
+
+#### **5.2 Optimization**.
+- Database indexing optimization.
+- Redis caching of high-frequency queries.
+- Nginx and Kubernetes for load balancing.
+
+--- --- --- --- --- --- --- --- --- --- --- ---
+
+## **Project directory structure
 ```
 distributed-ecommerce-platform/
 │
-├── backend/             # 后端微服务部分
-│   ├── user-service/    # 用户管理微服务
-│   ├── product-service/ # 商品管理微服务
-│   ├── order-service/   # 订单管理微服务
-│   ├── payment-service/ # 支付系统微服务
-│   └── recommendation-service/ # 推荐系统微服务
+├── backend/ # Backend microservices section
+│ ├── user-service/ # user management microservice
+│ ├── product-service/ # Product management microservice
+│ ├── order-service/ # order management microservice
+│ ├── payment-service/ # payment system microservice
+│ └── recommendation-service/ # Recommendation system microservice
+│ └─ recommendation-service/ # recommendation-system microservice
+├── frontend/ # Front-end part (React)
+│ ├── src/ # Front-end part (React)
+│ ├── public/
+│ └── package.json
 │
-├── frontend/            # 前端部分（React）
-│   ├── src/
-│   ├── public/
-│   └── package.json
+├── docker/ # Docker configuration
+│ └── docker-compose.yml
 │
-├── docker/              # Docker 配置
-│   └── docker-compose.yml
-│
-├── k8s/                 # Kubernetes 配置文件
-│   └── deployment.yaml
-│
-└── README.md            # 项目说明文件
+├── k8s/ # Kubernetes Configuration File
+│ └── deployment.yaml
+│ └── README.yml │
+└── README.md # Project description file
 ```
+*** Translated with www.DeepL.com/Translator (free version) ***
+
