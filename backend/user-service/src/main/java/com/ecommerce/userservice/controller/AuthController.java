@@ -5,8 +5,11 @@ import com.ecommerce.userservice.dto.PasswordResetRequest;
 import com.ecommerce.userservice.entity.User;
 import com.ecommerce.userservice.response.ResponseWrapper;
 import com.ecommerce.userservice.service.AuthService;
+import com.ecommerce.userservice.service.TokenBlacklistService;
+import com.ecommerce.userservice.util.JwtUtil;
 import com.ecommerce.userservice.util.LoginRequest;
 import com.ecommerce.userservice.util.ResponseUtil;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -15,6 +18,7 @@ import jakarta.validation.Valid;
 
 
 import java.util.Map;
+
 
 /**
  * AuthController: 认证控制器，处理用户登录和注册。
@@ -29,6 +33,12 @@ public class AuthController {
 
     @Autowired
     private AuthService authService;
+
+    @Autowired
+    private JwtUtil jwtUtil;
+
+    @Autowired
+    private TokenBlacklistService tokenBlacklistService;
 
     /**
      * 忘记密码：发送重置令牌
@@ -58,27 +68,24 @@ public class AuthController {
     /**
      * 用户注销
      *
-     * @return 注销成功响应
+     * @param token Bearer Token，由客户端传递
+     * @return 成功注销的响应
      */
     @PostMapping("/logout")
-    public ResponseEntity<ResponseWrapper<Void>> logout() {
-        // 从 SecurityContext 获取当前用户 ID
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    public ResponseEntity<ResponseWrapper<Void>> logout(@RequestHeader("Authorization") String token) {
+        // 移除 Bearer 前缀，提取纯 Token 值
+        String tokenValue = token.substring(7);
 
-        // 检查是否是匿名用户
-        if (principal == null || principal.equals("anonymousUser")) {
-            throw new IllegalArgumentException("User is not authenticated");
-        }
+        // 调用 JwtUtil 方法获取 Token 的剩余过期时间
+        long expiration = jwtUtil.getTokenExpirationInSeconds(tokenValue);
 
-        // 转换 principal 为 Long 类型的用户 ID
-        Long userId = Long.valueOf(principal.toString());
+        // 将 Token 添加到 Redis 黑名单，并设置到期时间
+        tokenBlacklistService.addToBlacklist(tokenValue, expiration);
 
-        // 调用服务层逻辑清理用户的 Refresh Token
-        authService.logout(userId);
-
-        // 返回成功响应
-        return ResponseEntity.ok(ResponseUtil.success("Logged out successfully", null));
+        // 返回注销成功响应
+        return ResponseEntity.ok(ResponseUtil.success("Logout successful", null));
     }
+
 
 
     @PostMapping("/refresh-token")

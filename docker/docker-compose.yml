@@ -1,22 +1,80 @@
 version: '3.8'
 services:
-  user-service:
-    build: ./backend/user-service
+  redis-master:
+    image: redis:latest
+    container_name: redis-master
     ports:
-      - "8081:8081"
-  product-service:
-    build: ./backend/product-service
+      - "6379:6379"
+    volumes:
+      - ./redis/redis-master.conf:/etc/redis/redis.conf
+    command: ["redis-server", "/etc/redis/redis.conf"]
+    networks:
+      - redis-net
+
+  redis-slave1:
+    image: redis:latest
+    container_name: redis-slave1
     ports:
-      - "8082:8082"
-  order-service:
-    build: ./backend/order-service
+      - "6380:6379"
+    volumes:
+      - ./redis/redis-slave1.conf:/etc/redis/redis.conf
+    command: ["redis-server", "/etc/redis/redis.conf"]
+    depends_on:
+      - redis-master
+    networks:
+      - redis-net
+
+  redis-slave2:
+    image: redis:latest
+    container_name: redis-slave2
     ports:
-      - "8083:8083"
-  payment-service:
-    build: ./backend/payment-service
+      - "6381:6379"
+    volumes:
+      - ./redis/redis-slave2.conf:/etc/redis/redis.conf
+    command: ["redis-server", "/etc/redis/redis.conf"]
+    depends_on:
+      - redis-master
+    networks:
+      - redis-net
+
+  sentinel1:
+    image: redis:latest
+    container_name: redis-sentinel1
     ports:
-      - "8084:8084"
-  recommendation-service:
-    build: ./backend/recommendation-service
+      - "26379:26379"
+    volumes:
+      - ./redis/sentinel1.conf:/etc/redis/sentinel.conf
+    command: ["redis-sentinel", "/etc/redis/sentinel.conf"]
+    depends_on:
+      - redis-master
+    networks:
+      - redis-net
+
+  sentinel2:
+    image: redis:latest
+    container_name: redis-sentinel2
     ports:
-      - "8085:8085"
+      - "26380:26379"
+    volumes:
+      - ./redis/sentinel2.conf:/etc/redis/sentinel.conf
+    command: ["redis-sentinel", "/etc/redis/sentinel.conf"]
+    depends_on:
+      - redis-master
+    networks:
+      - redis-net
+
+  sentinel3:
+    image: redis:latest
+    container_name: redis-sentinel3
+    ports:
+      - "26381:26379"
+    volumes:
+      - ./redis/sentinel3.conf:/etc/redis/sentinel.conf
+    command: ["redis-sentinel", "/etc/redis/sentinel.conf"]
+    depends_on:
+      - redis-master
+    networks:
+      - redis-net
+
+networks:
+  redis-net:

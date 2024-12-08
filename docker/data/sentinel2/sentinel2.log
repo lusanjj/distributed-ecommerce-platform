@@ -1,0 +1,75 @@
+1:X 08 Dec 2024 01:10:39.330 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:X 08 Dec 2024 01:10:39.331 * Redis version=7.4.1, bits=64, commit=00000000, modified=0, pid=1, just started
+1:X 08 Dec 2024 01:10:39.332 * Configuration loaded
+1:X 08 Dec 2024 01:10:39.333 * monotonic clock: POSIX clock_gettime
+1:X 08 Dec 2024 01:10:39.335 * Running mode=sentinel, port=26380.
+1:X 08 Dec 2024 01:10:39.338 # Could not create tmp config file (Permission denied)
+1:X 08 Dec 2024 01:10:39.340 # WARNING: Sentinel was not able to save the new configuration on disk!!!: Permission denied
+1:X 08 Dec 2024 01:10:39.342 * Sentinel ID is baf79e092f661d06898bb5c1185401b0d28361e2
+1:X 08 Dec 2024 01:10:39.343 # +monitor master mymaster 127.0.0.1 6379 quorum 2
+1:X 08 Dec 2024 01:10:44.355 # +sdown master mymaster 127.0.0.1 6379
+1:signal-handler (1733621489) Received SIGTERM scheduling shutdown...
+1:X 08 Dec 2024 01:31:29.446 * User requested shutdown...
+1:X 08 Dec 2024 01:31:29.447 # Sentinel is now ready to exit, bye bye...
+1:X 08 Dec 2024 01:31:41.838 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:X 08 Dec 2024 01:31:41.840 * Redis version=7.4.1, bits=64, commit=00000000, modified=0, pid=1, just started
+1:X 08 Dec 2024 01:31:41.841 * Configuration loaded
+1:X 08 Dec 2024 01:31:41.843 * monotonic clock: POSIX clock_gettime
+1:X 08 Dec 2024 01:31:41.844 * Running mode=sentinel, port=26380.
+1:X 08 Dec 2024 01:31:41.846 # Could not create tmp config file (Permission denied)
+1:X 08 Dec 2024 01:31:41.847 # WARNING: Sentinel was not able to save the new configuration on disk!!!: Permission denied
+1:X 08 Dec 2024 01:31:41.848 * Sentinel ID is 1f7e4f19fe7d4f7791e59988f9236d00cfca2d1c
+1:X 08 Dec 2024 01:31:41.849 # +monitor master mymaster 127.0.0.1 6379 quorum 2
+1:X 08 Dec 2024 01:31:46.879 # +sdown master mymaster 127.0.0.1 6379
+1:signal-handler (1733621570) Received SIGTERM scheduling shutdown...
+1:X 08 Dec 2024 01:32:50.488 * User requested shutdown...
+1:X 08 Dec 2024 01:32:50.489 # Sentinel is now ready to exit, bye bye...
+1:X 08 Dec 2024 01:32:52.853 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:X 08 Dec 2024 01:32:52.854 * Redis version=7.4.1, bits=64, commit=00000000, modified=0, pid=1, just started
+1:X 08 Dec 2024 01:32:52.856 * Configuration loaded
+1:X 08 Dec 2024 01:32:52.857 * monotonic clock: POSIX clock_gettime
+1:X 08 Dec 2024 01:32:52.858 * Running mode=sentinel, port=26380.
+1:X 08 Dec 2024 01:32:52.861 # Could not create tmp config file (Permission denied)
+1:X 08 Dec 2024 01:32:52.861 # WARNING: Sentinel was not able to save the new configuration on disk!!!: Permission denied
+1:X 08 Dec 2024 01:32:52.863 * Sentinel ID is 0fb36391de52d30ed5bf25edbae7f8d888e7d6bd
+1:X 08 Dec 2024 01:32:52.864 # +monitor master mymaster 127.0.0.1 6379 quorum 2
+1:X 08 Dec 2024 01:32:57.899 # +sdown master mymaster 127.0.0.1 6379
+1:signal-handler (1733622721) Received SIGTERM scheduling shutdown...
+1:X 08 Dec 2024 01:52:01.706 * User requested shutdown...
+1:X 08 Dec 2024 01:52:01.708 # Sentinel is now ready to exit, bye bye...
+1:X 08 Dec 2024 01:52:04.815 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:X 08 Dec 2024 01:52:04.816 * Redis version=7.4.1, bits=64, commit=00000000, modified=0, pid=1, just started
+1:X 08 Dec 2024 01:52:04.817 * Configuration loaded
+1:X 08 Dec 2024 01:52:04.819 * monotonic clock: POSIX clock_gettime
+1:X 08 Dec 2024 01:52:04.820 * Running mode=sentinel, port=26380.
+1:X 08 Dec 2024 01:52:04.824 # Could not create tmp config file (Permission denied)
+1:X 08 Dec 2024 01:52:04.825 # WARNING: Sentinel was not able to save the new configuration on disk!!!: Permission denied
+1:X 08 Dec 2024 01:52:04.826 * Sentinel ID is 1446051fa6d073f4a43888e11f6c8afd8578f77e
+1:X 08 Dec 2024 01:52:04.827 # +monitor master mymaster 127.0.0.1 6379 quorum 2
+1:X 08 Dec 2024 01:52:09.860 # +sdown master mymaster 127.0.0.1 6379
+1:signal-handler (1733623228) Received SIGTERM scheduling shutdown...
+1:X 08 Dec 2024 02:00:28.778 * User requested shutdown...
+1:X 08 Dec 2024 02:00:28.779 # Sentinel is now ready to exit, bye bye...
+1:X 08 Dec 2024 02:00:31.056 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:X 08 Dec 2024 02:00:31.056 * Redis version=7.4.1, bits=64, commit=00000000, modified=0, pid=1, just started
+1:X 08 Dec 2024 02:00:31.057 * Configuration loaded
+1:X 08 Dec 2024 02:00:31.058 * monotonic clock: POSIX clock_gettime
+1:X 08 Dec 2024 02:00:31.059 * Running mode=sentinel, port=26380.
+1:X 08 Dec 2024 02:00:31.060 # Could not create tmp config file (Permission denied)
+1:X 08 Dec 2024 02:00:31.061 # WARNING: Sentinel was not able to save the new configuration on disk!!!: Permission denied
+1:X 08 Dec 2024 02:00:31.062 * Sentinel ID is c4bda43fbd23ea8d1732fa92dff1b2b12911f271
+1:X 08 Dec 2024 02:00:31.062 # +monitor master mymaster 127.0.0.1 6379 quorum 2
+1:X 08 Dec 2024 02:00:36.075 # +sdown master mymaster 127.0.0.1 6379
+1:signal-handler (1733623374) Received SIGTERM scheduling shutdown...
+1:X 08 Dec 2024 02:02:54.917 * User requested shutdown...
+1:X 08 Dec 2024 02:02:54.917 # Sentinel is now ready to exit, bye bye...
+1:X 08 Dec 2024 02:02:55.910 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:X 08 Dec 2024 02:02:55.911 * Redis version=7.4.1, bits=64, commit=00000000, modified=0, pid=1, just started
+1:X 08 Dec 2024 02:02:55.913 * Configuration loaded
+1:X 08 Dec 2024 02:02:55.914 * monotonic clock: POSIX clock_gettime
+1:X 08 Dec 2024 02:02:55.915 * Running mode=sentinel, port=26380.
+1:X 08 Dec 2024 02:02:55.918 # Could not create tmp config file (Permission denied)
+1:X 08 Dec 2024 02:02:55.919 # WARNING: Sentinel was not able to save the new configuration on disk!!!: Permission denied
+1:X 08 Dec 2024 02:02:55.920 * Sentinel ID is 7161a2ff8db85af5102b1f936a46ca20f932f5e1
+1:X 08 Dec 2024 02:02:55.922 # +monitor master mymaster 127.0.0.1 6379 quorum 2
+1:X 08 Dec 2024 02:03:00.962 # +sdown master mymaster 127.0.0.1 6379

@@ -1,0 +1,1024 @@
+1:C 07 Dec 2024 23:59:13.861 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 07 Dec 2024 23:59:13.862 * Redis version=7.4.1, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 07 Dec 2024 23:59:13.864 * Configuration loaded
+1:M 07 Dec 2024 23:59:13.865 * monotonic clock: POSIX clock_gettime
+1:M 07 Dec 2024 23:59:13.867 * Running mode=standalone, port=6379.
+1:M 07 Dec 2024 23:59:13.869 * Server initialized
+1:M 07 Dec 2024 23:59:13.870 * Ready to accept connections tcp
+1:signal-handler (1733616174) Received SIGTERM scheduling shutdown...
+1:M 08 Dec 2024 00:02:54.300 * User requested shutdown...
+1:M 08 Dec 2024 00:02:54.301 * Saving the final RDB snapshot before exiting.
+1:M 08 Dec 2024 00:02:54.309 * DB saved on disk
+1:M 08 Dec 2024 00:02:54.311 # Redis is now ready to exit, bye bye...
+1:C 08 Dec 2024 00:02:56.192 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 08 Dec 2024 00:02:56.193 * Redis version=7.4.1, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 08 Dec 2024 00:02:56.193 * Configuration loaded
+1:M 08 Dec 2024 00:02:56.195 * monotonic clock: POSIX clock_gettime
+1:M 08 Dec 2024 00:02:56.197 * Running mode=standalone, port=6379.
+1:M 08 Dec 2024 00:02:56.202 * Server initialized
+1:M 08 Dec 2024 00:02:56.207 * Loading RDB produced by version 7.4.1
+1:M 08 Dec 2024 00:02:56.209 * RDB age 2 seconds
+1:M 08 Dec 2024 00:02:56.210 * RDB memory usage when created 0.95 Mb
+1:M 08 Dec 2024 00:02:56.212 * Done loading RDB, keys loaded: 1, keys expired: 0.
+1:M 08 Dec 2024 00:02:56.213 * DB loaded from disk: 0.009 seconds
+1:M 08 Dec 2024 00:02:56.214 * Ready to accept connections tcp
+1:M 08 Dec 2024 00:02:56.224 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:02:56.224 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:02:56.225 * Replication backlog created, my new replication IDs are 'dc5b3a4e819b8e609e549ee9ab0797d5ce0b817c' and '0000000000000000000000000000000000000000'
+1:M 08 Dec 2024 00:02:56.226 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:02:57.027 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:02:57.028 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:02:57.029 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:03:01.233 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:03:01.235 * Background RDB transfer started by pid 21
+21:C 08 Dec 2024 00:03:01.235 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:03:01.237 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:03:01.251 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:03:01.256 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:03:01.257 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:03:01.258 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:03:01.337 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:03:01.338 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:03:01.340 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:03:02.251 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:03:02.256 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:03:02.256 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:03:02.257 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:03:06.261 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:03:06.264 * Background RDB transfer started by pid 28
+28:C 08 Dec 2024 00:03:06.266 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:03:06.267 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:03:06.279 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:03:06.285 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:03:06.286 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:03:06.287 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:03:06.366 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:03:06.367 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:03:06.368 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:03:07.282 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:03:07.289 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:03:07.289 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:03:07.290 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:03:11.285 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:03:11.288 * Background RDB transfer started by pid 29
+29:C 08 Dec 2024 00:03:11.288 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:03:11.290 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:03:11.302 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:03:11.308 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:03:11.309 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:03:11.310 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:03:11.390 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:03:11.391 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:03:11.392 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:03:12.306 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:03:12.316 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:03:12.317 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:03:12.318 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:03:16.307 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:03:16.309 * Background RDB transfer started by pid 30
+30:C 08 Dec 2024 00:03:16.309 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:03:16.311 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:03:16.320 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:03:16.324 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:03:16.325 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:03:16.326 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:03:16.411 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:03:16.412 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:03:16.412 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:03:17.326 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:03:17.332 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:03:17.333 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:03:17.334 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:03:21.329 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:03:21.332 * Background RDB transfer started by pid 31
+31:C 08 Dec 2024 00:03:21.332 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:03:21.334 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:03:21.347 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:03:21.353 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:03:21.354 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:03:21.355 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:03:21.434 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:03:21.435 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:03:21.436 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:03:22.354 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:03:22.362 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:03:22.363 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:03:22.364 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:03:26.353 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:03:26.363 * Background RDB transfer started by pid 32
+32:C 08 Dec 2024 00:03:26.363 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:03:26.365 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:03:26.384 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:03:26.388 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:03:26.389 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:03:26.390 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:03:26.489 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:03:26.490 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:03:26.491 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:03:27.375 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:03:27.380 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:03:27.381 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:03:27.382 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:03:31.409 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:03:31.412 * Background RDB transfer started by pid 33
+33:C 08 Dec 2024 00:03:31.412 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:03:31.414 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:03:31.428 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:03:31.438 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:03:31.439 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:03:31.440 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:03:31.514 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:03:31.515 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:03:31.516 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:03:32.430 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:03:32.435 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:03:32.436 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:03:32.437 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:03:36.434 * Starting BGSAVE for SYNC with target: replicas sockets
+34:C 08 Dec 2024 00:03:36.437 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:03:36.437 * Background RDB transfer started by pid 34
+1:M 08 Dec 2024 00:03:36.439 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:03:36.452 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:03:36.459 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:03:36.460 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:03:36.461 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:03:36.539 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:03:36.540 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:03:36.542 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:03:37.458 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:03:37.467 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:03:37.468 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:03:37.469 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:03:41.465 * Starting BGSAVE for SYNC with target: replicas sockets
+35:C 08 Dec 2024 00:03:41.467 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:03:41.467 * Background RDB transfer started by pid 35
+1:M 08 Dec 2024 00:03:41.468 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:03:41.482 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:03:41.487 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:03:41.488 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:03:41.489 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:03:41.569 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:03:41.570 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:03:41.571 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:03:42.485 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:03:42.492 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:03:42.493 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:03:42.494 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:03:46.488 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:03:46.490 * Background RDB transfer started by pid 36
+36:C 08 Dec 2024 00:03:46.490 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:03:46.491 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:03:46.502 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:03:46.506 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:03:46.506 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:03:46.507 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:03:46.591 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:03:46.592 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:03:46.593 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:03:47.541 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:03:47.553 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:03:47.554 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:03:47.555 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:03:51.511 * Starting BGSAVE for SYNC with target: replicas sockets
+37:C 08 Dec 2024 00:03:51.513 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:03:51.513 * Background RDB transfer started by pid 37
+1:M 08 Dec 2024 00:03:51.513 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:03:51.525 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:03:51.530 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:03:51.530 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:03:51.531 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:03:51.614 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:03:51.617 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:03:51.619 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:03:52.529 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:03:52.537 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:03:52.538 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:03:52.539 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:03:56.535 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:03:56.537 * Background RDB transfer started by pid 38
+38:C 08 Dec 2024 00:03:56.538 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:03:56.539 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:03:56.553 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:03:56.559 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:03:56.560 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:03:56.561 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:03:56.639 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:03:56.640 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:03:56.641 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:03:57.555 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:03:57.563 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:03:57.564 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:03:57.565 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:04:01.557 * Starting BGSAVE for SYNC with target: replicas sockets
+39:C 08 Dec 2024 00:04:01.559 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:04:01.559 * Background RDB transfer started by pid 39
+1:M 08 Dec 2024 00:04:01.561 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:04:01.574 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:04:01.581 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:04:01.582 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:04:01.583 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:04:01.662 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:04:01.663 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:04:01.664 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:04:02.578 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:04:02.586 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:04:02.587 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:04:02.588 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:04:06.580 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:04:06.582 * Background RDB transfer started by pid 40
+40:C 08 Dec 2024 00:04:06.582 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:04:06.583 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:04:06.597 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:04:06.604 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:04:06.605 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:04:06.606 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:04:06.684 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:04:06.685 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:04:06.686 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:04:07.600 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:04:07.605 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:04:07.606 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:04:07.606 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:04:11.602 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:04:11.605 * Background RDB transfer started by pid 41
+41:C 08 Dec 2024 00:04:11.605 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:04:11.606 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:04:11.619 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:04:11.625 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:04:11.626 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:04:11.627 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:04:11.707 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:04:11.709 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:04:11.710 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:04:12.622 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:04:12.629 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:04:12.629 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:04:12.630 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:04:16.626 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:04:16.629 * Background RDB transfer started by pid 42
+42:C 08 Dec 2024 00:04:16.629 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:04:16.631 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:04:16.645 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:04:16.651 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:04:16.652 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:04:16.653 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:04:16.732 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:04:16.733 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:04:16.734 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:04:17.648 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:04:17.656 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:04:17.657 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:04:17.658 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:04:21.650 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:04:21.652 * Background RDB transfer started by pid 43
+43:C 08 Dec 2024 00:04:21.652 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:04:21.654 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:04:21.667 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:04:21.675 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:04:21.675 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:04:21.677 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:04:21.755 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:04:21.756 * Streamed RDB transfer with replica 172.20.0.2:6381 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:04:21.757 * Synchronization with replica 172.20.0.2:6381 succeeded
+1:M 08 Dec 2024 00:04:22.669 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:04:22.677 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:04:22.678 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:04:22.679 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:04:26.673 * Starting BGSAVE for SYNC with target: replicas sockets
+44:C 08 Dec 2024 00:04:26.675 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:04:26.675 * Background RDB transfer started by pid 44
+1:M 08 Dec 2024 00:04:26.678 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:04:26.690 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:04:26.699 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:04:26.700 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:04:26.701 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:04:26.778 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:04:26.779 * Streamed RDB transfer with replica 172.20.0.2:6381 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:04:26.780 * Synchronization with replica 172.20.0.2:6381 succeeded
+1:M 08 Dec 2024 00:04:27.694 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:04:27.702 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:04:27.703 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:04:27.704 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:04:31.696 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:04:31.698 * Background RDB transfer started by pid 45
+45:C 08 Dec 2024 00:04:31.698 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:04:31.700 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:04:31.712 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:04:31.718 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:04:31.719 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:04:31.721 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:04:31.801 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:04:31.802 * Streamed RDB transfer with replica 172.20.0.2:6381 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:04:31.803 * Synchronization with replica 172.20.0.2:6381 succeeded
+1:M 08 Dec 2024 00:04:32.716 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:04:32.726 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:04:32.727 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:04:32.728 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:04:36.719 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:04:36.723 * Background RDB transfer started by pid 46
+46:C 08 Dec 2024 00:04:36.723 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:04:36.724 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:04:36.738 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:04:36.744 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:04:36.745 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:04:36.746 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:04:36.825 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:04:36.826 * Streamed RDB transfer with replica 172.20.0.2:6381 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:04:36.827 * Synchronization with replica 172.20.0.2:6381 succeeded
+1:M 08 Dec 2024 00:04:37.743 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:04:37.750 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:04:37.751 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:04:37.752 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:04:41.744 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:04:41.747 * Background RDB transfer started by pid 47
+47:C 08 Dec 2024 00:04:41.747 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:04:41.750 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:04:41.764 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:04:41.769 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:04:41.770 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:04:41.771 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:04:41.849 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:04:41.851 * Streamed RDB transfer with replica 172.20.0.2:6381 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:04:41.852 * Synchronization with replica 172.20.0.2:6381 succeeded
+1:M 08 Dec 2024 00:04:42.770 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:04:42.777 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:04:42.778 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:04:42.779 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:04:46.769 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:04:46.772 * Background RDB transfer started by pid 48
+48:C 08 Dec 2024 00:04:46.773 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:04:46.775 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:04:46.788 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:04:46.795 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:04:46.796 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:04:46.797 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:04:46.875 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:04:46.876 * Streamed RDB transfer with replica 172.20.0.2:6381 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:04:46.877 * Synchronization with replica 172.20.0.2:6381 succeeded
+1:M 08 Dec 2024 00:04:47.788 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:04:47.794 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:04:47.795 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:04:47.796 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:04:51.793 * Starting BGSAVE for SYNC with target: replicas sockets
+49:C 08 Dec 2024 00:04:51.796 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:04:51.796 * Background RDB transfer started by pid 49
+1:M 08 Dec 2024 00:04:51.798 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:04:51.811 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:04:51.817 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:04:51.818 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:04:51.819 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:04:51.898 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:04:51.900 * Streamed RDB transfer with replica 172.20.0.2:6381 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:04:51.901 * Synchronization with replica 172.20.0.2:6381 succeeded
+1:M 08 Dec 2024 00:04:52.818 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:04:52.826 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:04:52.827 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:04:52.828 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:04:56.816 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:04:56.819 * Background RDB transfer started by pid 50
+50:C 08 Dec 2024 00:04:56.819 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:04:56.820 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:04:56.834 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:04:56.840 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:04:56.841 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:04:56.842 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:04:56.921 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:04:56.923 * Streamed RDB transfer with replica 172.20.0.2:6381 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:04:56.924 * Synchronization with replica 172.20.0.2:6381 succeeded
+1:M 08 Dec 2024 00:04:57.840 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:04:57.847 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:04:57.848 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:04:57.849 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:05:01.841 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:05:01.843 * Background RDB transfer started by pid 51
+51:C 08 Dec 2024 00:05:01.844 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:05:01.845 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:05:01.858 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:05:01.865 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:05:01.866 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:05:01.867 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:05:01.945 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:05:01.946 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:05:01.946 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:05:02.860 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:05:02.866 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:05:02.867 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:05:02.868 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:05:06.862 * Starting BGSAVE for SYNC with target: replicas sockets
+52:C 08 Dec 2024 00:05:06.864 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:05:06.865 * Background RDB transfer started by pid 52
+1:M 08 Dec 2024 00:05:06.866 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:05:06.878 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:05:06.886 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:05:06.887 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:05:06.888 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:05:06.968 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:05:06.969 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:05:06.970 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:05:07.883 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:05:07.889 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:05:07.889 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:05:07.890 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:05:11.887 * Starting BGSAVE for SYNC with target: replicas sockets
+53:C 08 Dec 2024 00:05:11.890 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:05:11.890 * Background RDB transfer started by pid 53
+1:M 08 Dec 2024 00:05:11.892 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:05:11.906 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:05:11.914 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:05:11.915 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:05:11.915 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:05:11.993 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:05:11.993 * Streamed RDB transfer with replica 172.20.0.2:6381 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:05:11.994 * Synchronization with replica 172.20.0.2:6381 succeeded
+1:M 08 Dec 2024 00:05:12.907 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:05:12.912 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:05:12.913 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:05:12.914 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:05:16.910 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:05:16.912 * Background RDB transfer started by pid 54
+54:C 08 Dec 2024 00:05:16.912 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:05:16.914 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:05:16.926 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:05:16.932 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:05:16.933 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:05:16.933 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:05:17.015 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:05:17.015 * Streamed RDB transfer with replica 172.20.0.2:6381 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:05:17.016 * Synchronization with replica 172.20.0.2:6381 succeeded
+1:M 08 Dec 2024 00:05:17.932 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:05:17.939 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:05:17.940 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:05:17.945 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:05:21.933 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:05:21.935 * Background RDB transfer started by pid 55
+55:C 08 Dec 2024 00:05:21.935 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:05:21.937 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:05:21.947 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:05:21.952 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:05:21.953 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:05:21.954 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:05:22.037 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:05:22.038 * Streamed RDB transfer with replica 172.20.0.2:6381 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:05:22.038 * Synchronization with replica 172.20.0.2:6381 succeeded
+1:M 08 Dec 2024 00:05:22.954 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:05:22.959 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:05:22.959 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:05:22.960 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:05:26.954 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:05:26.956 * Background RDB transfer started by pid 56
+56:C 08 Dec 2024 00:05:26.956 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:05:26.958 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:05:26.969 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:05:26.974 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:05:26.975 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:05:26.976 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:05:27.057 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:05:27.058 * Streamed RDB transfer with replica 172.20.0.2:6381 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:05:27.059 * Synchronization with replica 172.20.0.2:6381 succeeded
+1:M 08 Dec 2024 00:05:27.972 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:05:27.978 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:05:27.979 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:05:27.979 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:05:31.976 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:05:31.978 * Background RDB transfer started by pid 57
+57:C 08 Dec 2024 00:05:31.978 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:05:31.980 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:05:31.997 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:05:32.002 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:05:32.003 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:05:32.003 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:05:32.080 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:05:32.081 * Streamed RDB transfer with replica 172.20.0.2:6381 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:05:32.082 * Synchronization with replica 172.20.0.2:6381 succeeded
+1:M 08 Dec 2024 00:05:32.997 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:05:33.004 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:05:33.005 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:05:33.006 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:05:38.002 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:05:38.005 * Background RDB transfer started by pid 58
+58:C 08 Dec 2024 00:05:38.006 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:05:38.007 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:05:38.021 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:05:38.026 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:05:38.026 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:05:38.027 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:05:38.108 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:05:38.108 * Streamed RDB transfer with replica 172.20.0.2:6381 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:05:38.109 * Synchronization with replica 172.20.0.2:6381 succeeded
+1:M 08 Dec 2024 00:05:39.023 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:05:39.029 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:05:39.030 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:05:39.031 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:05:43.025 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:05:43.027 * Background RDB transfer started by pid 59
+59:C 08 Dec 2024 00:05:43.028 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:05:43.030 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:05:43.044 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:05:43.051 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:05:43.052 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:05:43.053 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:05:43.129 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:05:43.130 * Streamed RDB transfer with replica 172.20.0.2:6381 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:05:43.131 * Synchronization with replica 172.20.0.2:6381 succeeded
+1:M 08 Dec 2024 00:05:44.044 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:05:44.052 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:05:44.053 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:05:44.054 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:05:48.047 * Starting BGSAVE for SYNC with target: replicas sockets
+60:C 08 Dec 2024 00:05:48.049 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:05:48.050 * Background RDB transfer started by pid 60
+1:M 08 Dec 2024 00:05:48.052 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:05:48.065 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:05:48.077 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:05:48.078 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:05:48.079 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:05:48.152 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:05:48.154 * Streamed RDB transfer with replica 172.20.0.2:6381 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:05:48.155 * Synchronization with replica 172.20.0.2:6381 succeeded
+1:M 08 Dec 2024 00:05:49.067 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:05:49.076 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:05:49.076 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:05:49.077 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:05:53.072 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:05:53.073 * Background RDB transfer started by pid 61
+61:C 08 Dec 2024 00:05:53.073 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:05:53.075 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:05:53.087 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:05:53.092 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:05:53.093 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:05:53.094 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:05:53.175 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:05:53.176 * Streamed RDB transfer with replica 172.20.0.2:6381 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:05:53.177 * Synchronization with replica 172.20.0.2:6381 succeeded
+1:M 08 Dec 2024 00:05:54.090 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:05:54.098 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:05:54.099 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:05:54.100 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:05:58.091 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:05:58.094 * Background RDB transfer started by pid 62
+62:C 08 Dec 2024 00:05:58.094 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:05:58.096 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:05:58.110 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:05:58.118 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:05:58.119 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:05:58.121 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:05:58.196 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:05:58.197 * Streamed RDB transfer with replica 172.20.0.2:6381 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:05:58.198 * Synchronization with replica 172.20.0.2:6381 succeeded
+1:M 08 Dec 2024 00:05:59.113 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:05:59.119 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:05:59.119 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:05:59.120 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:06:03.114 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:06:03.117 * Background RDB transfer started by pid 63
+63:C 08 Dec 2024 00:06:03.117 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:06:03.119 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:06:03.133 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:06:03.140 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:06:03.141 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:06:03.142 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:06:03.219 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:06:03.221 * Streamed RDB transfer with replica 172.20.0.2:6381 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:06:03.222 * Synchronization with replica 172.20.0.2:6381 succeeded
+1:M 08 Dec 2024 00:06:04.134 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:06:04.142 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:06:04.143 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:06:04.144 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:06:08.139 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:06:08.141 * Background RDB transfer started by pid 64
+64:C 08 Dec 2024 00:06:08.141 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:06:08.144 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:06:08.158 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:06:08.166 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:06:08.167 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:06:08.168 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:06:08.244 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:06:08.245 * Streamed RDB transfer with replica 172.20.0.2:6381 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:06:08.245 * Synchronization with replica 172.20.0.2:6381 succeeded
+1:M 08 Dec 2024 00:06:09.161 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:06:09.169 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:06:09.170 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:06:09.171 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:06:13.162 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:06:13.165 * Background RDB transfer started by pid 65
+65:C 08 Dec 2024 00:06:13.165 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:06:13.167 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:06:13.183 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:06:13.189 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:06:13.190 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:06:13.190 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:06:13.267 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:06:13.268 * Streamed RDB transfer with replica 172.20.0.2:6381 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:06:13.269 * Synchronization with replica 172.20.0.2:6381 succeeded
+1:M 08 Dec 2024 00:06:14.184 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:06:14.191 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:06:14.192 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:06:14.193 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:06:18.185 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:06:18.188 * Background RDB transfer started by pid 66
+66:C 08 Dec 2024 00:06:18.189 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:06:18.193 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:06:18.206 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:06:18.212 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:06:18.212 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:06:18.213 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:06:18.289 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:06:18.290 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:06:18.291 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:06:19.207 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:06:19.215 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:06:19.216 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:06:19.217 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:06:23.208 * Starting BGSAVE for SYNC with target: replicas sockets
+67:C 08 Dec 2024 00:06:23.210 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:06:23.210 * Background RDB transfer started by pid 67
+1:M 08 Dec 2024 00:06:23.212 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:06:23.224 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:06:23.232 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:06:23.234 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:06:23.234 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:06:23.313 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:06:23.314 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:06:23.314 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:06:24.222 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:06:24.227 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:06:24.228 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:06:24.229 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:06:28.230 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:06:28.231 * Background RDB transfer started by pid 68
+68:C 08 Dec 2024 00:06:28.232 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:06:28.233 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:06:28.247 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:06:28.253 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:06:28.254 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:06:28.255 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:06:28.333 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:06:28.334 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:06:28.335 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:06:29.250 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:06:29.255 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:06:29.256 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:06:29.256 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:06:33.251 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:06:33.253 * Background RDB transfer started by pid 69
+69:C 08 Dec 2024 00:06:33.253 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:06:33.255 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:06:33.267 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:06:33.272 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:06:33.273 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:06:33.274 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:06:33.355 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:06:33.357 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:06:33.358 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:06:34.272 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:06:34.280 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:06:34.281 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:06:34.282 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:06:38.274 * Starting BGSAVE for SYNC with target: replicas sockets
+70:C 08 Dec 2024 00:06:38.275 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:06:38.275 * Background RDB transfer started by pid 70
+1:M 08 Dec 2024 00:06:38.277 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:06:38.289 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:06:38.294 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:06:38.295 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:06:38.296 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:06:38.378 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:06:38.379 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:06:38.379 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:06:39.293 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:06:39.301 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:06:39.302 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:06:39.303 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:06:43.296 * Starting BGSAVE for SYNC with target: replicas sockets
+71:C 08 Dec 2024 00:06:43.299 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:06:43.299 * Background RDB transfer started by pid 71
+1:M 08 Dec 2024 00:06:43.301 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:06:43.312 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:06:43.317 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:06:43.318 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:06:43.319 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:06:43.401 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:06:43.402 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:06:43.402 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:06:44.317 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:06:44.324 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:06:44.324 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:06:44.325 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:06:48.318 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:06:48.320 * Background RDB transfer started by pid 72
+72:C 08 Dec 2024 00:06:48.321 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:06:48.323 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:06:48.336 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:06:48.344 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:06:48.345 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:06:48.346 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:06:48.422 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:06:48.423 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:06:48.424 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:06:49.337 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:06:49.342 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:06:49.343 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:06:49.344 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:06:53.340 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:06:53.342 * Background RDB transfer started by pid 73
+73:C 08 Dec 2024 00:06:53.342 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:06:53.344 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:06:53.357 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:06:53.362 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:06:53.363 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:06:53.364 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:06:53.444 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:06:53.445 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:06:53.445 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:06:54.357 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:06:54.364 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:06:54.365 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:06:54.366 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:06:58.360 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:06:58.361 * Background RDB transfer started by pid 74
+74:C 08 Dec 2024 00:06:58.361 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:06:58.362 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:06:58.373 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:06:58.378 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:06:58.379 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:06:58.379 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:06:58.463 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:06:58.464 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:06:58.465 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:06:59.378 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:06:59.384 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:06:59.385 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:06:59.386 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:07:03.382 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:07:03.384 * Background RDB transfer started by pid 75
+75:C 08 Dec 2024 00:07:03.384 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:07:03.385 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:07:03.397 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:07:03.408 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:07:03.409 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:07:03.410 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:07:03.489 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:07:03.490 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:07:03.491 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:07:04.400 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:07:04.407 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:07:04.408 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:07:04.410 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:07:08.408 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:07:08.409 * Background RDB transfer started by pid 76
+76:C 08 Dec 2024 00:07:08.411 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:07:08.411 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:07:08.421 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:07:08.425 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:07:08.426 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:07:08.427 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:07:08.511 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:07:08.513 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:07:08.514 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:07:09.432 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:07:09.436 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:07:09.437 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:07:09.437 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:07:13.431 * Starting BGSAVE for SYNC with target: replicas sockets
+77:C 08 Dec 2024 00:07:13.433 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:07:13.433 * Background RDB transfer started by pid 77
+1:M 08 Dec 2024 00:07:13.435 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:07:13.448 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:07:13.454 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:07:13.455 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:07:13.455 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:07:13.536 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:07:13.537 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:07:13.538 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:07:14.451 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:07:14.458 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:07:14.459 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:07:14.460 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:07:18.454 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:07:18.456 * Background RDB transfer started by pid 78
+78:C 08 Dec 2024 00:07:18.456 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:07:18.457 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:07:18.470 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:07:18.477 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:07:18.478 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:07:18.479 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:07:18.561 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:07:18.562 * Streamed RDB transfer with replica 172.20.0.2:6381 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:07:18.564 * Synchronization with replica 172.20.0.2:6381 succeeded
+1:M 08 Dec 2024 00:07:19.475 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:07:19.482 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:07:19.483 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:07:19.484 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:07:23.481 * Starting BGSAVE for SYNC with target: replicas sockets
+79:C 08 Dec 2024 00:07:23.483 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:07:23.483 * Background RDB transfer started by pid 79
+1:M 08 Dec 2024 00:07:23.484 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:07:23.499 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:07:23.503 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:07:23.504 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:07:23.505 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:07:23.584 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:07:23.585 * Streamed RDB transfer with replica 172.20.0.2:6381 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:07:23.586 * Synchronization with replica 172.20.0.2:6381 succeeded
+1:M 08 Dec 2024 00:07:24.501 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:07:24.507 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:07:24.508 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:07:24.509 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:07:28.504 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:07:28.506 * Background RDB transfer started by pid 80
+80:C 08 Dec 2024 00:07:28.506 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:07:28.508 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:07:28.523 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:07:28.528 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:07:28.529 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:07:28.529 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:07:28.608 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:07:28.609 * Streamed RDB transfer with replica 172.20.0.2:6381 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:07:28.610 * Synchronization with replica 172.20.0.2:6381 succeeded
+1:M 08 Dec 2024 00:07:29.526 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:07:29.533 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:07:29.534 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:07:29.535 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:07:33.527 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:07:33.529 * Background RDB transfer started by pid 81
+81:C 08 Dec 2024 00:07:33.529 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:07:33.531 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:07:33.542 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:07:33.549 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:07:33.550 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:07:33.551 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:07:33.631 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:07:33.632 * Streamed RDB transfer with replica 172.20.0.2:6381 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:07:33.633 * Synchronization with replica 172.20.0.2:6381 succeeded
+1:M 08 Dec 2024 00:07:34.545 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:07:34.556 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:07:34.557 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:07:34.558 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:07:38.549 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:07:38.552 * Background RDB transfer started by pid 82
+82:C 08 Dec 2024 00:07:38.552 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:07:38.554 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:07:38.569 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:07:38.578 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:07:38.579 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:07:38.580 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:07:38.654 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:07:38.655 * Streamed RDB transfer with replica 172.20.0.2:6381 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:07:38.656 * Synchronization with replica 172.20.0.2:6381 succeeded
+1:M 08 Dec 2024 00:07:39.571 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:07:39.578 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:07:39.580 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:07:39.581 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:07:43.572 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:07:43.574 * Background RDB transfer started by pid 83
+83:C 08 Dec 2024 00:07:43.574 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:07:43.575 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:07:43.587 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:07:43.591 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:07:43.592 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:07:43.593 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:07:43.676 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:07:43.678 * Streamed RDB transfer with replica 172.20.0.2:6381 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:07:43.679 * Synchronization with replica 172.20.0.2:6381 succeeded
+1:M 08 Dec 2024 00:07:44.593 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:07:44.600 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:07:44.601 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:07:44.602 * Delay next BGSAVE for diskless SYNC
+1:M 08 Dec 2024 00:07:48.596 * Starting BGSAVE for SYNC with target: replicas sockets
+1:M 08 Dec 2024 00:07:48.599 * Background RDB transfer started by pid 84
+84:C 08 Dec 2024 00:07:48.599 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 08 Dec 2024 00:07:48.601 * Diskless rdb transfer, done reading from pipe, 2 replicas still up.
+1:M 08 Dec 2024 00:07:48.613 * Connection with replica 172.20.0.2:6381 lost.
+1:M 08 Dec 2024 00:07:48.623 * Replica 172.20.0.2:6381 asks for synchronization
+1:M 08 Dec 2024 00:07:48.624 * Full resync requested by replica 172.20.0.2:6381
+1:M 08 Dec 2024 00:07:48.625 * Current BGSAVE has socket target. Waiting for next BGSAVE for SYNC
+1:M 08 Dec 2024 00:07:48.705 * Background RDB transfer terminated with success
+1:M 08 Dec 2024 00:07:48.707 * Streamed RDB transfer with replica 172.20.0.3:6380 succeeded (socket). Waiting for REPLCONF ACK from replica to enable streaming
+1:M 08 Dec 2024 00:07:48.708 * Synchronization with replica 172.20.0.3:6380 succeeded
+1:M 08 Dec 2024 00:07:49.618 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:07:49.626 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:07:49.627 * Full resync requested by replica 172.20.0.3:6380
+1:M 08 Dec 2024 00:07:49.628 * Delay next BGSAVE for diskless SYNC
+1:signal-handler (1733616471) Received SIGTERM scheduling shutdown...
+1:M 08 Dec 2024 00:07:51.320 * User requested shutdown...
+1:M 08 Dec 2024 00:07:51.322 * Waiting for replicas before shutting down.
+1:M 08 Dec 2024 00:07:51.326 * Connection with replica 172.20.0.2:6381 lost.
+1:signal-handler (1733616473) Received SIGTERM scheduling shutdown...
+1:M 08 Dec 2024 00:07:54.046 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:07:54.132 * Saving the final RDB snapshot before exiting.
+1:M 08 Dec 2024 00:07:54.143 * DB saved on disk
+1:M 08 Dec 2024 00:07:54.145 # Redis is now ready to exit, bye bye...
+1:C 08 Dec 2024 00:08:00.006 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 08 Dec 2024 00:08:00.008 * Redis version=7.4.1, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 08 Dec 2024 00:08:00.009 * Configuration loaded
+1:M 08 Dec 2024 00:08:00.010 * monotonic clock: POSIX clock_gettime
+1:M 08 Dec 2024 00:08:00.012 * Running mode=standalone, port=6379.
+1:M 08 Dec 2024 00:08:00.014 * Server initialized
+1:M 08 Dec 2024 00:08:00.017 * Loading RDB produced by version 7.4.1
+1:M 08 Dec 2024 00:08:00.018 * RDB age 6 seconds
+1:M 08 Dec 2024 00:08:00.019 * RDB memory usage when created 1.02 Mb
+1:M 08 Dec 2024 00:08:00.021 * Done loading RDB, keys loaded: 1, keys expired: 0.
+1:M 08 Dec 2024 00:08:00.023 * DB loaded from disk: 0.007 seconds
+1:M 08 Dec 2024 00:08:00.024 * Ready to accept connections tcp
+1:signal-handler (1733616601) Received SIGTERM scheduling shutdown...
+1:M 08 Dec 2024 00:10:01.792 * User requested shutdown...
+1:M 08 Dec 2024 00:10:01.793 * Saving the final RDB snapshot before exiting.
+1:M 08 Dec 2024 00:10:01.801 * DB saved on disk
+1:M 08 Dec 2024 00:10:01.802 # Redis is now ready to exit, bye bye...
+1:C 08 Dec 2024 00:10:57.643 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 08 Dec 2024 00:10:57.644 * Redis version=7.4.1, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 08 Dec 2024 00:10:57.646 * Configuration loaded
+1:M 08 Dec 2024 00:10:57.650 * monotonic clock: POSIX clock_gettime
+1:M 08 Dec 2024 00:10:57.654 * Running mode=standalone, port=6379.
+1:M 08 Dec 2024 00:10:57.655 * Server initialized
+1:M 08 Dec 2024 00:10:57.656 * Loading RDB produced by version 7.4.1
+1:M 08 Dec 2024 00:10:57.657 * RDB age 56 seconds
+1:M 08 Dec 2024 00:10:57.658 * RDB memory usage when created 0.90 Mb
+1:M 08 Dec 2024 00:10:57.658 * Done loading RDB, keys loaded: 1, keys expired: 0.
+1:M 08 Dec 2024 00:10:57.659 * DB loaded from disk: 0.004 seconds
+1:M 08 Dec 2024 00:10:57.660 * Ready to accept connections tcp
+1:M 08 Dec 2024 00:10:57.746 * Replica 172.20.0.4:6381 asks for synchronization
+1:M 08 Dec 2024 00:10:57.747 * Partial resynchronization request from 172.20.0.4:6381 accepted. Sending 0 bytes of backlog starting from offset 502.
+1:M 08 Dec 2024 00:10:58.523 * Replica 172.20.0.2:6380 asks for synchronization
+1:M 08 Dec 2024 00:10:58.524 * Partial resynchronization request from 172.20.0.2:6380 accepted. Sending 0 bytes of backlog starting from offset 502.
+1:signal-handler (1733616753) Received SIGTERM scheduling shutdown...
+1:M 08 Dec 2024 00:12:33.808 * Connection with replica 172.20.0.2:6380 lost.
+1:M 08 Dec 2024 00:12:33.820 * User requested shutdown...
+1:M 08 Dec 2024 00:12:33.821 * 1 of 1 replicas are in sync when shutting down.
+1:M 08 Dec 2024 00:12:33.822 * Saving the final RDB snapshot before exiting.
+1:M 08 Dec 2024 00:12:33.832 * DB saved on disk
+1:M 08 Dec 2024 00:12:33.833 # Redis is now ready to exit, bye bye...
+1:C 08 Dec 2024 00:12:40.720 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 08 Dec 2024 00:12:40.721 * Redis version=7.4.1, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 08 Dec 2024 00:12:40.722 * Configuration loaded
+1:M 08 Dec 2024 00:12:40.724 * monotonic clock: POSIX clock_gettime
+1:M 08 Dec 2024 00:12:40.726 * Running mode=standalone, port=6379.
+1:M 08 Dec 2024 00:12:40.728 * Server initialized
+1:M 08 Dec 2024 00:12:40.730 * Loading RDB produced by version 7.4.1
+1:M 08 Dec 2024 00:12:40.731 * RDB age 7 seconds
+1:M 08 Dec 2024 00:12:40.732 * RDB memory usage when created 0.99 Mb
+1:M 08 Dec 2024 00:12:40.735 * Done loading RDB, keys loaded: 1, keys expired: 0.
+1:M 08 Dec 2024 00:12:40.737 * DB loaded from disk: 0.008 seconds
+1:M 08 Dec 2024 00:12:40.738 * Ready to accept connections tcp
+1:M 08 Dec 2024 00:12:41.056 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:12:41.057 * Partial resynchronization request from 172.20.0.3:6380 accepted. Sending 0 bytes of backlog starting from offset 628.
+1:M 08 Dec 2024 00:12:41.077 * Replica 172.20.0.4:6381 asks for synchronization
+1:M 08 Dec 2024 00:12:41.078 * Partial resynchronization request from 172.20.0.4:6381 accepted. Sending 0 bytes of backlog starting from offset 628.
+1:signal-handler (1733617042) Received SIGTERM scheduling shutdown...
+1:M 08 Dec 2024 00:17:22.648 * User requested shutdown...
+1:M 08 Dec 2024 00:17:22.649 * 2 of 2 replicas are in sync when shutting down.
+1:M 08 Dec 2024 00:17:22.650 * Saving the final RDB snapshot before exiting.
+1:M 08 Dec 2024 00:17:22.661 # Error moving temp DB file temp-1.rdb on the final destination dump.rdb (in server root dir /data): No such file or directory
+1:M 08 Dec 2024 00:17:22.662 # Error trying to save the DB, can't exit.
+1:M 08 Dec 2024 00:17:22.663 # Errors trying to shut down the server. Check the logs for more information.
+1:M 08 Dec 2024 00:17:22.664 * Connection with replica 172.20.0.4:6381 lost.
+1:M 08 Dec 2024 00:17:32.599 * Connection with replica 172.20.0.3:6380 lost.
+1:C 08 Dec 2024 00:17:51.189 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 08 Dec 2024 00:17:51.192 * Redis version=7.4.1, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 08 Dec 2024 00:17:51.193 * Configuration loaded
+1:M 08 Dec 2024 00:17:51.195 * monotonic clock: POSIX clock_gettime
+1:M 08 Dec 2024 00:17:51.197 * Running mode=standalone, port=6379.
+1:M 08 Dec 2024 00:17:51.198 * Server initialized
+1:M 08 Dec 2024 00:17:51.201 * Loading RDB produced by version 7.4.1
+1:M 08 Dec 2024 00:17:51.202 * RDB age 29 seconds
+1:M 08 Dec 2024 00:17:51.203 * RDB memory usage when created 1.04 Mb
+1:M 08 Dec 2024 00:17:51.203 * Done loading RDB, keys loaded: 1, keys expired: 0.
+1:M 08 Dec 2024 00:17:51.205 * DB loaded from disk: 0.005 seconds
+1:M 08 Dec 2024 00:17:51.205 * Ready to accept connections tcp
+1:M 08 Dec 2024 00:17:57.560 * Replica 172.20.0.3:6380 asks for synchronization
+1:M 08 Dec 2024 00:17:57.560 * Partial resynchronization request from 172.20.0.3:6380 accepted. Sending 0 bytes of backlog starting from offset 1020.
+1:M 08 Dec 2024 00:17:59.338 * Replica 172.20.0.4:6381 asks for synchronization
+1:M 08 Dec 2024 00:17:59.339 * Partial resynchronization request from 172.20.0.4:6381 accepted. Sending 0 bytes of backlog starting from offset 1020.
+1:M 08 Dec 2024 00:27:06.718 # Possible SECURITY ATTACK detected. It looks like somebody is sending POST or Host: commands to Redis. This is likely due to an attacker attempting to use Cross Protocol Scripting to compromise your Redis instance. Connection from 172.20.0.1:45810 aborted.
+1:signal-handler (1733618875) Received SIGTERM scheduling shutdown...
+1:M 08 Dec 2024 00:47:55.337 * Connection with replica 172.20.0.3:6380 lost.
+1:M 08 Dec 2024 00:47:55.342 * User requested shutdown...
+1:M 08 Dec 2024 00:47:55.343 * 1 of 1 replicas are in sync when shutting down.
+1:M 08 Dec 2024 00:47:55.345 * Saving the final RDB snapshot before exiting.
+1:M 08 Dec 2024 00:47:55.355 * DB saved on disk
+1:M 08 Dec 2024 00:47:55.356 # Redis is now ready to exit, bye bye...
+1:C 08 Dec 2024 00:48:06.575 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 08 Dec 2024 00:48:06.576 * Redis version=7.4.1, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 08 Dec 2024 00:48:06.577 * Configuration loaded
+1:M 08 Dec 2024 00:48:06.579 * monotonic clock: POSIX clock_gettime
+1:M 08 Dec 2024 00:48:06.580 * Running mode=standalone, port=6379.
+1:M 08 Dec 2024 00:48:06.582 * Server initialized
+1:M 08 Dec 2024 00:48:06.585 * Loading RDB produced by version 7.4.1
+1:M 08 Dec 2024 00:48:06.586 * RDB age 11 seconds
+1:M 08 Dec 2024 00:48:06.587 * RDB memory usage when created 1.11 Mb
+1:M 08 Dec 2024 00:48:06.588 * Done loading RDB, keys loaded: 1, keys expired: 0.
+1:M 08 Dec 2024 00:48:06.590 * DB loaded from disk: 0.006 seconds
+1:M 08 Dec 2024 00:48:06.591 * Ready to accept connections tcp
+1:M 08 Dec 2024 00:48:06.740 * Replica 172.20.0.3:6381 asks for synchronization
+1:M 08 Dec 2024 00:48:06.741 * Partial resynchronization request from 172.20.0.3:6381 accepted. Sending 0 bytes of backlog starting from offset 3584.
+1:M 08 Dec 2024 00:48:06.812 * Replica 172.20.0.4:6380 asks for synchronization
+1:M 08 Dec 2024 00:48:06.813 * Partial resynchronization request from 172.20.0.4:6380 accepted. Sending 0 bytes of backlog starting from offset 3584.
+1:signal-handler (1733620219) Received SIGTERM scheduling shutdown...
+1:M 08 Dec 2024 01:10:20.048 * User requested shutdown...
+1:M 08 Dec 2024 01:10:20.049 * 2 of 2 replicas are in sync when shutting down.
+1:M 08 Dec 2024 01:10:20.051 * Saving the final RDB snapshot before exiting.
+1:M 08 Dec 2024 01:10:20.065 # Error moving temp DB file temp-1.rdb on the final destination dump.rdb (in server root dir /data): No such file or directory
+1:M 08 Dec 2024 01:10:20.066 # Error trying to save the DB, can't exit.
+1:M 08 Dec 2024 01:10:20.068 # Errors trying to shut down the server. Check the logs for more information.
+1:M 08 Dec 2024 01:10:20.071 * Connection with replica 172.20.0.3:6381 lost.
+1:M 08 Dec 2024 01:10:29.979 * Connection with replica 172.20.0.4:6380 lost.

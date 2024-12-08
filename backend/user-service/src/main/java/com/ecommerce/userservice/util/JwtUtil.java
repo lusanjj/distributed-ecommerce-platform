@@ -40,6 +40,37 @@ public class JwtUtil {
     }
 
     /**
+     * 获取 Token 的剩余过期时间（以秒为单位）
+     *
+     * @param token JWT Token
+     * @return 剩余的过期时间（秒）
+     * @throws IllegalArgumentException 如果 Token 无效或过期
+     */
+    public long getTokenExpirationInSeconds(String token) {
+        try {
+            // 使用解析器验证并解析 Token 的 Claims（有效负载）
+            Claims claims = Jwts.parserBuilder()
+                    // 设置签名密钥
+                    .setSigningKey(secretKey)
+                    .build()
+                    // 解析 Token
+                    .parseClaimsJws(token)
+                    .getBody();
+
+            // 获取 Token 的过期时间
+            Date expirationDate = claims.getExpiration();
+            // 当前时间
+            long currentTimeMillis = System.currentTimeMillis();
+
+            // 计算剩余时间（过期时间 - 当前时间），单位为秒
+            return (expirationDate.getTime() - currentTimeMillis) / 1000;
+        } catch (JwtException | IllegalArgumentException e) {
+            // 捕获解析异常并抛出明确的错误信息
+            throw new IllegalArgumentException("Invalid Token! Unable to get expiration time.");
+        }
+    }
+
+    /**
      * 生成重置密码的 Token
      * @param userId 用户的 ID
      * @return 重置密码 Token
