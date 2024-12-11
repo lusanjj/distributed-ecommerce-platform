@@ -2,9 +2,8 @@ package com.ecommerce.userservice.dto;
 
 import lombok.Getter;
 import lombok.Setter;
-
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Email;
 
 /**
  * ForgotPasswordRequest: 用于封装忘记密码的请求

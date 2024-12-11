@@ -4504,3 +4504,75 @@
 1:M 08 Dec 2024 02:03:08.566 * Creating AOF base file appendonly-master.aof.1.base.rdb on server start
 1:M 08 Dec 2024 02:03:08.579 * Creating AOF incr file appendonly-master.aof.1.incr.aof on server start
 1:M 08 Dec 2024 02:03:08.580 * Ready to accept connections tcp
+1:signal-handler (1733632827) Received SIGTERM scheduling shutdown...
+1:M 08 Dec 2024 04:40:27.315 * User requested shutdown...
+1:M 08 Dec 2024 04:40:27.316 * Calling fsync() on the AOF file.
+1:M 08 Dec 2024 04:40:27.318 * Saving the final RDB snapshot before exiting.
+1:M 08 Dec 2024 04:40:27.328 * DB saved on disk
+1:M 08 Dec 2024 04:40:27.329 # Redis is now ready to exit, bye bye...
+1:C 10 Dec 2024 02:27:20.576 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 10 Dec 2024 02:27:20.578 * Redis version=7.4.1, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 10 Dec 2024 02:27:20.579 * Configuration loaded
+1:M 10 Dec 2024 02:27:20.581 * monotonic clock: POSIX clock_gettime
+1:M 10 Dec 2024 02:27:20.582 * Running mode=standalone, port=6379.
+1:M 10 Dec 2024 02:27:20.584 * Server initialized
+1:M 10 Dec 2024 02:27:20.594 * Reading RDB base file on AOF loading...
+1:M 10 Dec 2024 02:27:20.596 * Loading RDB produced by version 7.4.1
+1:M 10 Dec 2024 02:27:20.597 * RDB age 174252 seconds
+1:M 10 Dec 2024 02:27:20.598 * RDB memory usage when created 0.90 Mb
+1:M 10 Dec 2024 02:27:20.600 * RDB is base AOF
+1:M 10 Dec 2024 02:27:20.602 * Done loading RDB, keys loaded: 0, keys expired: 0.
+1:M 10 Dec 2024 02:27:20.604 * DB loaded from base file appendonly-master.aof.1.base.rdb: 0.011 seconds
+1:M 10 Dec 2024 02:27:20.606 * DB loaded from append only file: 0.017 seconds
+1:M 10 Dec 2024 02:27:20.609 * Opening AOF incr file appendonly-master.aof.1.incr.aof on server start
+1:M 10 Dec 2024 02:27:20.610 * Ready to accept connections tcp
+1:signal-handler (1733797714) Received SIGTERM scheduling shutdown...
+1:M 10 Dec 2024 02:28:35.022 * User requested shutdown...
+1:M 10 Dec 2024 02:28:35.023 * Calling fsync() on the AOF file.
+1:M 10 Dec 2024 02:28:35.027 * Saving the final RDB snapshot before exiting.
+1:M 10 Dec 2024 02:28:35.042 * DB saved on disk
+1:M 10 Dec 2024 02:28:35.042 # Redis is now ready to exit, bye bye...
+1:C 11 Dec 2024 01:32:59.497 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 11 Dec 2024 01:32:59.498 * Redis version=7.4.1, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 11 Dec 2024 01:32:59.498 * Configuration loaded
+1:M 11 Dec 2024 01:32:59.499 * monotonic clock: POSIX clock_gettime
+1:M 11 Dec 2024 01:32:59.501 * Running mode=standalone, port=6379.
+1:M 11 Dec 2024 01:32:59.502 * Server initialized
+1:M 11 Dec 2024 01:32:59.508 * Reading RDB base file on AOF loading...
+1:M 11 Dec 2024 01:32:59.509 * Loading RDB produced by version 7.4.1
+1:M 11 Dec 2024 01:32:59.510 * RDB age 257391 seconds
+1:M 11 Dec 2024 01:32:59.510 * RDB memory usage when created 0.90 Mb
+1:M 11 Dec 2024 01:32:59.511 * RDB is base AOF
+1:M 11 Dec 2024 01:32:59.511 * Done loading RDB, keys loaded: 0, keys expired: 0.
+1:M 11 Dec 2024 01:32:59.513 * DB loaded from base file appendonly-master.aof.1.base.rdb: 0.005 seconds
+1:M 11 Dec 2024 01:32:59.514 * DB loaded from append only file: 0.010 seconds
+1:M 11 Dec 2024 01:32:59.516 * Opening AOF incr file appendonly-master.aof.1.incr.aof on server start
+1:M 11 Dec 2024 01:32:59.516 * Ready to accept connections tcp
+1:signal-handler (1733882118) Received SIGTERM scheduling shutdown...
+1:M 11 Dec 2024 01:55:18.580 * User requested shutdown...
+1:M 11 Dec 2024 01:55:18.581 * Calling fsync() on the AOF file.
+1:M 11 Dec 2024 01:55:18.585 * Saving the final RDB snapshot before exiting.
+1:M 11 Dec 2024 01:55:18.597 * DB saved on disk
+1:M 11 Dec 2024 01:55:18.598 # Redis is now ready to exit, bye bye...
+1:C 11 Dec 2024 01:55:21.942 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 11 Dec 2024 01:55:21.944 * Redis version=7.4.1, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 11 Dec 2024 01:55:21.945 * Configuration loaded
+1:M 11 Dec 2024 01:55:21.946 * monotonic clock: POSIX clock_gettime
+1:M 11 Dec 2024 01:55:21.948 * Running mode=standalone, port=6379.
+1:M 11 Dec 2024 01:55:21.949 * Server initialized
+1:M 11 Dec 2024 01:55:21.960 * Reading RDB base file on AOF loading...
+1:M 11 Dec 2024 01:55:21.961 * Loading RDB produced by version 7.4.1
+1:M 11 Dec 2024 01:55:21.962 * RDB age 258733 seconds
+1:M 11 Dec 2024 01:55:21.963 * RDB memory usage when created 0.90 Mb
+1:M 11 Dec 2024 01:55:21.964 * RDB is base AOF
+1:M 11 Dec 2024 01:55:21.966 * Done loading RDB, keys loaded: 0, keys expired: 0.
+1:M 11 Dec 2024 01:55:21.967 * DB loaded from base file appendonly-master.aof.1.base.rdb: 0.010 seconds
+1:M 11 Dec 2024 01:55:21.970 * DB loaded from append only file: 0.016 seconds
+1:M 11 Dec 2024 01:55:21.973 * Opening AOF incr file appendonly-master.aof.1.incr.aof on server start
+1:M 11 Dec 2024 01:55:21.974 * Ready to accept connections tcp
+1:signal-handler (1733883232) Received SIGTERM scheduling shutdown...
+1:M 11 Dec 2024 02:13:52.094 * User requested shutdown...
+1:M 11 Dec 2024 02:13:52.096 * Calling fsync() on the AOF file.
+1:M 11 Dec 2024 02:13:52.098 * Saving the final RDB snapshot before exiting.
+1:M 11 Dec 2024 02:13:52.111 * DB saved on disk
+1:M 11 Dec 2024 02:13:52.112 # Redis is now ready to exit, bye bye...

@@ -2,19 +2,16 @@ package com.ecommerce.userservice.controller;
 
 import com.ecommerce.userservice.dto.ChangePasswordRequest;
 import com.ecommerce.userservice.entity.User;
-import com.ecommerce.userservice.repository.UserRepository;
 import com.ecommerce.userservice.response.ResponseWrapper;
 import com.ecommerce.userservice.service.UserService;
 import com.ecommerce.userservice.util.ResponseUtil;
-import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
-import java.util.List;
+import jakarta.validation.Valid;
+
 
 /**
  * UserController: 用户管理端点
