@@ -1,94 +1,89 @@
-/**
- * File: LoginPage.js
- * Description: Handles user login, processes backend API response, and stores tokens.
- * Author: Shane Liu
- * Date: 2024/12/13
- */
-
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import apiClient from '../services/api';
+import { TextField, Button, Container, Typography, Box, CircularProgress } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import { setAuth, setRole } from '../redux/authSlice';
+import axios from '../services/api';
+import { jwtDecode } from 'jwt-decode';
+import '../styles/LoginPage.css'; // 引入自定义 CSS 文件
 
-/**
- * LoginPage component for user authentication.
- */
 const LoginPage = () => {
-    // State to store user input
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const [credentials, setCredentials] = useState({ username: '', password: '' });
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
+    const dispatch = useDispatch();
 
-    // State to manage error messages
-    const [error, setError] = useState(null);
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setCredentials((prev) => ({ ...prev, [name]: value }));
+    };
 
-    // React Router's navigate function for page redirection
-    const navigate = useNavigate();
-
-    /**
-     * Handle form submission for login.
-     * Sends user credentials to the login API.
-     */
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        setError(null);
-
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
         try {
-            // Make API call to login endpoint
-            const response = await apiClient.post('/auth/login', {
-                username,
-                password,
-            });
+            const response = await axios.post('/auth/login', credentials);
+            const token = response.data.data.accessToken;
+            const decoded = jwtDecode(token);
 
-            // Extract tokens from the wrapped response
-            const { accessToken, refreshToken } = response.data.data;
+            dispatch(setAuth(token));
+            dispatch(setRole(decoded.role));
 
-            // Save tokens to localStorage
-            localStorage.setItem('accessToken', accessToken);
-            localStorage.setItem('refreshToken', refreshToken);
-
-            // Navigate to the dashboard after successful login
-            navigate('/dashboard');
+            setLoading(false);
+            window.location.href = decoded.role === 'admin' ? '/admin/dashboard' : '/dashboard';
         } catch (err) {
-            // Handle API error response
-            setError(err.response?.data?.message || 'Login failed. Please try again.');
+            setLoading(false);
+            const errorMessage = err.response?.data?.message || 'Login failed. Please try again.';
+            setError(errorMessage);
         }
     };
 
-    /**
-     * Render the LoginPage component.
-     */
     return (
-        <div style={{ maxWidth: '400px', margin: 'auto', padding: '1rem' }}>
-            <h2>Login</h2>
-            {error && (
-                <div style={{ color: 'red', marginBottom: '1rem' }}>{error}</div>
-            )}
-            <form onSubmit={handleSubmit}>
-                <div style={{ marginBottom: '1rem' }}>
-                    <label htmlFor="username">Username</label>
-                    <input
-                        type="text"
-                        id="username"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        required
-                        style={{ width: '100%', padding: '0.5rem' }}
-                    />
-                </div>
-                <div style={{ marginBottom: '1rem' }}>
-                    <label htmlFor="password">Password</label>
-                    <input
-                        type="password"
-                        id="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                        style={{ width: '100%', padding: '0.5rem' }}
-                    />
-                </div>
-                <button type="submit" style={{ width: '100%', padding: '0.5rem' }}>
-                    Login
-                </button>
-            </form>
+        <div className="login-page">
+            <Container maxWidth="xs" className="login-container">
+                <Box className="login-box" sx={{ p: 4, boxShadow: 5 }}>
+                    <Typography variant="h4" className="login-title" gutterBottom>
+                        Welcome Back!
+                    </Typography>
+                    {error && (
+                        <Typography color="error" className="error-message">
+                            {error}
+                        </Typography>
+                    )}
+                    <form onSubmit={handleSubmit} className="login-form">
+                        <TextField
+                            label="Username"
+                            name="username"
+                            value={credentials.username}
+                            onChange={handleChange}
+                            fullWidth
+                            margin="normal"
+                            required
+                            className="input-field"
+                        />
+                        <TextField
+                            label="Password"
+                            name="password"
+                            type="password"
+                            value={credentials.password}
+                            onChange={handleChange}
+                            fullWidth
+                            margin="normal"
+                            required
+                            className="input-field"
+                        />
+                        <Button
+                            type="submit"
+                            variant="contained"
+                            color="primary"
+                            fullWidth
+                            className="login-button"
+                            disabled={loading}
+                        >
+                            {loading ? <CircularProgress size={24} color="inherit" /> : 'Login'}
+                        </Button>
+                    </form>
+                </Box>
+            </Container>
         </div>
     );
 };

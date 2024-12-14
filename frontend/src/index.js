@@ -1,17 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client'; // 注意：使用 react-dom/client 而不是 react-dom
-import './index.css';
+import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+import store from './redux/store'; // 引入配置好的 Redux Store
 import App from './App';
 
-// 找到 HTML 中的 root 元素
-const rootElement = document.getElementById('root');
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
-// 使用 React 18 的 createRoot API
-const root = ReactDOM.createRoot(rootElement);
-
-// 渲染 App 组件
 root.render(
     <React.StrictMode>
-        <App />
+        <Provider store={store}>
+            <App />
+        </Provider>
     </React.StrictMode>
 );

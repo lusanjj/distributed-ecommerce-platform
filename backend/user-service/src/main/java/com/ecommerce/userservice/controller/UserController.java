@@ -5,6 +5,8 @@ import com.ecommerce.userservice.entity.User;
 import com.ecommerce.userservice.response.ResponseWrapper;
 import com.ecommerce.userservice.service.UserService;
 import com.ecommerce.userservice.util.ResponseUtil;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -23,6 +25,8 @@ import jakarta.validation.Valid;
  */
 @RestController
 @RequestMapping("/api/users")
+@Tag(name = "User Management", description = "Operations related to user management")
+
 public class UserController {
 
     @Autowired
@@ -34,6 +38,8 @@ public class UserController {
      * @param changePasswordRequest 包含旧密码和新密码的请求数据
      * @return 操作结果
      */
+    @Operation(summary = "Update User Password", description = "Change the password of the currently authenticated user.")
+
     @PostMapping("/change-password")
     public ResponseEntity<ResponseWrapper<Void>> changePassword(
             @RequestBody @Valid ChangePasswordRequest changePasswordRequest) {
@@ -55,6 +61,8 @@ public class UserController {
      *
      * @return 当前用户信息
      */
+    @Operation(summary = "Get Current User Info", description = "Retrieve details of the currently authenticated user.")
+
     @GetMapping("/me")
     public ResponseEntity<ResponseWrapper<User>> getCurrentUser() {
         // 从 SecurityContext 获取当前用户的 ID
@@ -70,6 +78,8 @@ public class UserController {
      * @param updatedUser 更新后的用户数据（仅允许修改用户名和邮箱）
      * @return 更新后的用户信息
      */
+    @Operation(summary = "Update User Profile", description = "Update the authenticated user's profile information.")
+
     @PutMapping("/updateMe")
     public ResponseEntity<ResponseWrapper<User>> updateCurrentUser(@Valid @RequestBody User updatedUser) {
         // 从 SecurityContext 获取当前用户的 ID

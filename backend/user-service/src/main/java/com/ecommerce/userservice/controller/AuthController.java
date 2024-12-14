@@ -9,6 +9,8 @@ import com.ecommerce.userservice.service.TokenBlacklistService;
 import com.ecommerce.userservice.util.JwtUtil;
 import com.ecommerce.userservice.util.LoginRequest;
 import com.ecommerce.userservice.util.ResponseUtil;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -29,6 +31,9 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/api/auth")
+@Tag(name = "Authentication", description = "Operations related to user authentication")
+@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
+
 public class AuthController {
 
     @Autowired
@@ -47,6 +52,8 @@ public class AuthController {
      * @return 成功响应
      */
     @PostMapping("/forgot-password")
+    @Operation(summary = "forgot-password", description = "Send an reset token via email to reset password.")
+
     public ResponseEntity<ResponseWrapper<Void>> forgotPassword(@Valid @RequestBody ForgotPasswordRequest request) {
         authService.forgotPassword(request.getEmail());
         return ResponseEntity.ok(ResponseUtil.success("Password reset email sent", null));
@@ -59,6 +66,8 @@ public class AuthController {
      * @return 成功响应
      */
     @PostMapping("/reset-password")
+    @Operation(summary = "Password Reset Request", description = "Initiate password reset by sending an email.")
+
     public ResponseEntity<ResponseWrapper<Void>> resetPassword(@Valid @RequestBody PasswordResetRequest resetRequest) {
         // 调用 AuthService 的 resetPassword 方法，使用 resetRequest 的字段值
         authService.resetPassword(resetRequest.getToken(), resetRequest.getNewPassword());
@@ -72,6 +81,8 @@ public class AuthController {
      * @return 成功注销的响应
      */
     @PostMapping("/logout")
+    @Operation(summary = "logout", description = "logout is to put the token into blacklist ")
+
     public ResponseEntity<ResponseWrapper<Void>> logout(@RequestHeader("Authorization") String token) {
         // 移除 Bearer 前缀，提取纯 Token 值
         String tokenValue = token.substring(7);
@@ -89,6 +100,8 @@ public class AuthController {
 
 
     @PostMapping("/refresh-token")
+    @Operation(summary = "Generate token with refresh-token", description = "Generate token with refresh-token")
+
     public ResponseEntity<ResponseWrapper<String>> refresh(@RequestHeader("Authorization") String oldRefreshToken) {
         if (oldRefreshToken.startsWith("Bearer ")) {
             oldRefreshToken = oldRefreshToken.substring(7);
@@ -98,13 +111,15 @@ public class AuthController {
     }
 
     @PostMapping("/register")
+    @Operation(summary = "User Registration", description = "Register a new user in the system.")
     public ResponseEntity<ResponseWrapper<String>> register(@RequestBody User user) {
         authService.registerUser(user);
         return ResponseEntity.ok(ResponseUtil.success("User registered successfully", null));
     }
 
-
+    @CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
     @PostMapping("/login")
+    @Operation(summary = "User Login", description = "Authenticate user and return JWT token.")
     public ResponseEntity<ResponseWrapper<Map<String, String>>> login(@RequestBody LoginRequest loginRequest) {
         Map<String, String> tokens = authService.loginUser(loginRequest.getUsername(), loginRequest.getPassword());
         return ResponseEntity.ok(ResponseUtil.success("Login successful", tokens));

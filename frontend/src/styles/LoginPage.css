@@ -1,0 +1,142 @@
+/* 渐变背景动画 */
+.login-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #ff6f61, #ff9966, #ffcc33);
+    background-size: 300% 300%;
+    animation: gradientAnimation 6s ease infinite;
+    padding: 20px; /* 增加内边距以防止小屏幕溢出 */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* 登录表单容器 */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 登录表单卡片 */
+.login-box {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    animation: fadeIn 1.2s ease-in-out;
+    width: 100%;
+    max-width: 400px; /* 最大宽度为 400px，适配小屏 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 表单标题 */
+.login-title {
+    font-weight: bold;
+    color: #ff6f61;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 20px;
+    animation: titleBounce 2s infinite ease-in-out;
+}
+
+@keyframes titleBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* 输入框样式 */
+.input-field {
+    animation: slideIn 1s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 登录按钮 */
+.login-button {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(to right, #ff6f61, #ff9966);
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.login-button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to right, #ff9966, #ff6f61);
+}
+
+/* 错误提示样式 */
+.error-message {
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .login-box {
+        padding: 15px;
+        max-width: 90%; /* 小屏幕占满 90% 的宽度 */
+    }
+
+    .login-title {
+        font-size: 24px; /* 标题缩小 */
+    }
+
+    .input-field {
+        font-size: 14px; /* 输入框字体适配 */
+    }
+
+    .login-button {
+        font-size: 16px;
+        padding: 8px; /* 按钮间距缩小 */
+    }
+}
+
+@media (max-width: 480px) {
+    .login-title {
+        font-size: 20px;
+    }
+
+    .login-button {
+        font-size: 14px;
+        padding: 6px;
+    }
+}
