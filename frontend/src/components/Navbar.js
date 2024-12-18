@@ -9,6 +9,7 @@ const Navbar = () => {
                     MyShop
                 </Typography>
                 <Box>
+                    <Button color="inherit" href="/">Home</Button>
                     <Button color="inherit" href="/login">Login</Button>
                     <Button color="inherit" href="/signup">Sign Up</Button>
                 </Box>

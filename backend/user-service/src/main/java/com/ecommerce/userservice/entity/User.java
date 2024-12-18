@@ -1,6 +1,10 @@
 package com.ecommerce.userservice.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -13,7 +17,7 @@ import java.util.Date;
  *
  * @Author Shane Liu
  * @Create 2024/12/02 12:15
- * @Version 1.0
+ * @Version 1.1
  */
 @Entity
 @Table(name = "users")
@@ -23,31 +27,38 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Username cannot be blank")
+    @Size(min = 3, max = 20, message = "Username must be between 3 and 20 characters")
     @Column(nullable = false, unique = true)
     private String username;
 
+    @NotBlank(message = "Password cannot be blank")
+    @Size(min = 8, message = "Password must be at least 8 characters long")
+    @Pattern(regexp = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d).*$",
+            message = "Password must contain at least one uppercase letter, one lowercase letter, and one number")
     @Column(nullable = false)
     private String password;
 
+    @NotBlank(message = "Email cannot be blank")
+    @Email(message = "Email must be a valid format")
     @Column(nullable = false, unique = true)
     private String email;
 
-    // 用户角色：USER / ADMIN
-    private String role;
+    @Pattern(regexp = "^(USER|ADMIN)$", message = "Role must be either USER or ADMIN")
+    @Column(nullable = false)
+    private String role = "USER";
 
-    // 用于存储用户的 Refresh Token，长度限制为 512 字符
+    @Size(max = 512, message = "Refresh Token cannot exceed 512 characters")
     @Column(length = 512)
     private String refreshToken;
 
-    // 新增字段：重置令牌
+    @Size(max = 512, message = "Reset Token cannot exceed 512 characters")
+    @Column(length = 512)
     private String resetToken;
 
-    // 新增字段：令牌过期时间
     @Temporal(TemporalType.TIMESTAMP)
     private Date resetTokenExpiry;
 
-    // 存储密码的最后更新时间，用于检查 Token 有效性
-    private LocalDateTime passwordLastUpdated;
-
-
+    @Column(nullable = false)
+    private LocalDateTime passwordLastUpdated = LocalDateTime.now();
 }

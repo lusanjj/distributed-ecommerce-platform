@@ -1,0 +1,20 @@
+{
+  "signup": {
+    "title": "Sign Up",
+    "username": "Username",
+    "email": "Email",
+    "password": "Password",
+    "confirm_password": "Confirm Password",
+    "submit": "Sign Up",
+    "registering": "Registering..."
+  },
+  "success": {
+    "registration": "Registration successful! Redirecting to home..."
+  },
+  "error": {
+    "invalid_email": "Invalid email format.",
+    "weak_password": "Password must be at least 8 characters, include a number and an uppercase letter.",
+    "password_mismatch": "Passwords do not match.",
+    "registration_failed": "Registration failed. Please try again."
+  }
+}

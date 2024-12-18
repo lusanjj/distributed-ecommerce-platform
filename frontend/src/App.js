@@ -1,19 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LoginPage from './pages/LoginPage';
-import HomePage from './pages/HomePage';
-import SignUpPage from './pages/SignUpPage';
+import { BrowserRouter as Router } from 'react-router-dom';
+import AppRoutes from './routes'; // 引入路由配置
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import './styles/index.css'; // 全局样式
 
-function App() {
+const App = () => {
     return (
         <Router>
-            <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/signup" element={<SignUpPage />} />
-            </Routes>
+            <Navbar />
+            <AppRoutes /> {/* 加载路由 */}
+            <Footer />
         </Router>
     );
-}
+};
 
 export default App;

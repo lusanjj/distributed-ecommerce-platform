@@ -1,7 +1,21 @@
 import React, { useState } from 'react';
-import { TextField, Button, Container, Typography, Box } from '@mui/material';
+import {
+    TextField,
+    Button,
+    Container,
+    Typography,
+    Box,
+    Snackbar,
+    Alert,
+    IconButton,
+    InputAdornment,
+    CircularProgress,
+    Grid,
+} from '@mui/material';
+import { Visibility, VisibilityOff, ArrowBack } from '@mui/icons-material';
 import axios from '../services/api';
 import { useNavigate } from 'react-router-dom';
+import '../styles/SignUpPage.css';
 
 const SignUpPage = () => {
     const [formData, setFormData] = useState({
@@ -10,114 +24,165 @@ const SignUpPage = () => {
         password: '',
         confirmPassword: '',
     });
-    const [error, setError] = useState('');
-    const [success, setSuccess] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [toast, setToast] = useState({ open: false, type: 'success', message: '' });
     const navigate = useNavigate();
 
+    // 输入框变化
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
+    // 显示/隐藏密码
+    const togglePasswordVisibility = () => setShowPassword((prev) => !prev);
+    const toggleConfirmPasswordVisibility = () => setShowConfirmPassword((prev) => !prev);
+
+    // 提交注册表单
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setError('');
-        setSuccess('');
+        setLoading(true);
 
         if (formData.password !== formData.confirmPassword) {
-            setError('Passwords do not match.');
+            setToast({ open: true, type: 'error', message: 'Passwords do not match.' });
+            setLoading(false);
             return;
         }
 
         try {
-            setLoading(true);
-            // eslint-disable-next-line
-            const response = await axios.post('/auth/register', {
-                username: formData.username,
-                email: formData.email,
-                password: formData.password,
+            await axios.post('/auth/register', {
+                username: formData.username.trim(),
+                email: formData.email.trim(),
+                password: formData.password.trim(),
             });
 
-
-            setLoading(false);
-            setSuccess('Registration successful! Redirecting to login...');
-            setTimeout(() => navigate('/login'), 2000); // 自动跳转到登录页面
+            setToast({ open: true, type: 'success', message: 'Registration successful! Redirecting...' });
+            setTimeout(() => navigate('/login'), 2000);
         } catch (err) {
+            const errorMessage = err.response?.data?.message || 'Registration failed. Please try again.';
+            setToast({ open: true, type: 'error', message: errorMessage });
+        } finally {
             setLoading(false);
-            setError(err.response?.data?.message || 'Registration failed. Please try again.');
         }
     };
 
+    // 返回主页
+    const handleReturnToHome = () => navigate('/');
+
     return (
-        <Container maxWidth="xs">
-            <Box sx={{ mt: 8, textAlign: 'center' }}>
-                <Typography variant="h4" gutterBottom>
-                    Sign Up
-                </Typography>
-                {error && (
-                    <Typography color="error" sx={{ mb: 2 }}>
-                        {error}
+        <div className="signup-page">
+            <Container maxWidth="sm" className="signup-container">
+                <Box className="signup-box" sx={{ p: 4, boxShadow: 5, borderRadius: 3, position: 'relative' }}>
+                    {/* 返回按钮 */}
+                    <IconButton onClick={handleReturnToHome} sx={{ position: 'absolute', top: 8, left: 8 }}>
+                        <ArrowBack fontSize="large" color="primary" />
+                    </IconButton>
+
+                    <Typography variant="h4" align="center" gutterBottom>
+                        Create Your Account
                     </Typography>
-                )}
-                {success && (
-                    <Typography color="primary" sx={{ mb: 2 }}>
-                        {success}
-                    </Typography>
-                )}
-                <form onSubmit={handleSubmit}>
-                    <TextField
-                        label="Username"
-                        name="username"
-                        value={formData.username}
-                        onChange={handleChange}
-                        fullWidth
-                        margin="normal"
-                        required
-                    />
-                    <TextField
-                        label="Email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        fullWidth
-                        margin="normal"
-                        required
-                        type="email"
-                    />
-                    <TextField
-                        label="Password"
-                        name="password"
-                        value={formData.password}
-                        onChange={handleChange}
-                        fullWidth
-                        margin="normal"
-                        required
-                        type="password"
-                    />
-                    <TextField
-                        label="Confirm Password"
-                        name="confirmPassword"
-                        value={formData.confirmPassword}
-                        onChange={handleChange}
-                        fullWidth
-                        margin="normal"
-                        required
-                        type="password"
-                    />
-                    <Button
-                        type="submit"
-                        variant="contained"
-                        color="primary"
-                        fullWidth
-                        sx={{ mt: 2 }}
-                        disabled={loading}
-                    >
-                        {loading ? 'Registering...' : 'Sign Up'}
-                    </Button>
-                </form>
-            </Box>
-        </Container>
+
+                    <form onSubmit={handleSubmit}>
+                        <Grid container spacing={2}>
+                            {/* 用户名 */}
+                            <Grid item xs={12}>
+                                <TextField
+                                    label="Username"
+                                    name="username"
+                                    value={formData.username}
+                                    onChange={handleChange}
+                                    fullWidth
+                                    required
+                                />
+                            </Grid>
+
+                            {/* 邮箱 */}
+                            <Grid item xs={12}>
+                                <TextField
+                                    label="Email"
+                                    name="email"
+                                    type="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    fullWidth
+                                    required
+                                />
+                            </Grid>
+
+                            {/* 密码 */}
+                            <Grid item xs={12}>
+                                <TextField
+                                    label="Password"
+                                    name="password"
+                                    type={showPassword ? 'text' : 'password'}
+                                    value={formData.password}
+                                    onChange={handleChange}
+                                    fullWidth
+                                    required
+                                    InputProps={{
+                                        endAdornment: (
+                                            <InputAdornment position="end">
+                                                <IconButton onClick={togglePasswordVisibility}>
+                                                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                                                </IconButton>
+                                            </InputAdornment>
+                                        ),
+                                    }}
+                                />
+                            </Grid>
+
+                            {/* 确认密码 */}
+                            <Grid item xs={12}>
+                                <TextField
+                                    label="Confirm Password"
+                                    name="confirmPassword"
+                                    type={showConfirmPassword ? 'text' : 'password'}
+                                    value={formData.confirmPassword}
+                                    onChange={handleChange}
+                                    fullWidth
+                                    required
+                                    InputProps={{
+                                        endAdornment: (
+                                            <InputAdornment position="end">
+                                                <IconButton onClick={toggleConfirmPasswordVisibility}>
+                                                    {showConfirmPassword ? <VisibilityOff /> : <Visibility />}
+                                                </IconButton>
+                                            </InputAdornment>
+                                        ),
+                                    }}
+                                />
+                            </Grid>
+                        </Grid>
+
+                        {/* 提交按钮 */}
+                        <Button
+                            type="submit"
+                            variant="contained"
+                            color="primary"
+                            fullWidth
+                            sx={{ mt: 2, py: 1.2 }}
+                            disabled={loading}
+                        >
+                            {loading ? <CircularProgress size={24} color="inherit" /> : 'Sign Up'}
+                        </Button>
+                    </form>
+                </Box>
+
+                {/* Toast 提示 */}
+                <Snackbar
+                    open={toast.open}
+                    autoHideDuration={4000}
+                    onClose={() => setToast({ ...toast, open: false })}
+                    anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+                >
+                    <Alert severity={toast.type} onClose={() => setToast({ ...toast, open: false })}>
+                        {toast.message}
+                    </Alert>
+                </Snackbar>
+            </Container>
+        </div>
     );
 };
 

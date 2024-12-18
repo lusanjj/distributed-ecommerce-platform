@@ -1,27 +1,17 @@
 import React from 'react';
-import { Container, Typography, Button } from '@mui/material';
-import { useSelector, useDispatch } from 'react-redux';
-import { clearAuth } from '../redux/authSlice';
+import { Container, Typography, Box } from '@mui/material';
 
 const AdminDashboard = () => {
-    const dispatch = useDispatch();
-    const { role } = useSelector((state) => state.auth);
-
-    const handleLogout = () => {
-        dispatch(clearAuth());
-        localStorage.removeItem('token');
-        window.location.href = '/login';
-    };
-
     return (
-        <Container maxWidth="lg">
-            <Typography variant="h4" gutterBottom>
-                Admin Dashboard
-            </Typography>
-            <Typography variant="body1">Welcome, {role}</Typography>
-            <Button variant="contained" color="secondary" onClick={handleLogout}>
-                Logout
-            </Button>
+        <Container maxWidth="md" sx={{ mt: 8 }}>
+            <Box sx={{ p: 4, boxShadow: 3, borderRadius: 3 }}>
+                <Typography variant="h4" gutterBottom>
+                    Admin Dashboard
+                </Typography>
+                <Typography variant="body1">
+                    Welcome to the admin dashboard! Here, you can manage users, orders, and products.
+                </Typography>
+            </Box>
         </Container>
     );
 };
